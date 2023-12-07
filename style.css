@@ -1,0 +1,35 @@
+html{
+    scroll-behavior: auto !important;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    /* overflow: hidden; */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
+
+ #sideNavBar
+ {
+    width: 50px;
+ }
+
+ .navItem:hover
+ {
+    background-color: grey !important;
+    cursor: pointer;
+ }
+
+ .transitionBlock
+ {
+    background-color:black;
+    height: 200px;
+ }
