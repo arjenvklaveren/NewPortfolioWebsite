@@ -17,37 +17,42 @@
         <div class="container-fluid">
             <div class="row">
                 <div id = mainContent class="col nopadding text-white">
-                    <div class="vh-100 bg-primary">Contact
+                    <div id="contactPage" class="vh-100 bg-primary contentPage">Contact
                         <!-- Content -->
                     </div>
 
                     <div class="transitionBlock"></div>
 
-                    <div class="vh-100 bg-success">Projects
+                    <div id="projectsPage" class="vh-100 bg-success contentPage">Projects
                         <!-- Content -->
                     </div>
 
                     <div class="transitionBlock"></div>
 
-                    <div class="vh-100 bg-danger">About
+                    <div id="aboutPage" class="vh-100 bg-danger contentPage">About
                         <!-- Content -->
                     </div>
 
                     <div class="transitionBlock"></div>
 
-                    <div class="vh-100 bg-warning">Home
+                    <div id="homePage" class="vh-100 bg-warning contentPage">Home
                         <!-- Content -->
                     </div>
+
+                    <div id="contentRocket"></div>
                 </div>
                 <div id="sideNavBar" class="col col-1 bg-light text-dark">
                     <div class="sticky-top row vh-100">
-                        <div class="col-12 w-100 bg-warning navItem">4</div>
-                        <div class="col-12 w-100 bg-danger navItem">3</div>
-                        <div class="col-12 w-100 bg-success navItem">2</div>
-                        <div class="col-12 w-100 bg-primary navItem">1</div>
+                        <a href="#contactPage" class="col-12 w-100 bg-primary navItem"></a>
+                        <a href="#projectsPage" class="col-12 w-100 bg-success navItem"></a>
+                        <a href="#aboutPage" class="col-12 w-100 bg-danger navItem"></a>
+                        <a href="#homePage" class="col-12 w-100 bg-warning navItem"></a>
+                        
+                        <div id="navRocket">        
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>       
     </body>
 </html>
