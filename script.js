@@ -4,6 +4,10 @@ var currentHeightPercentage;
 
 var pagesHeights = [];
 
+var currentBlockID = 4;
+
+var canTransition = true;
+
 window.onload = function() 
 {
     generateTransitionBlocks();
@@ -11,11 +15,14 @@ window.onload = function()
     scrollToBottom();
     setInterval(update, 10);
 };
-
 window.onresize = function()
 {
     setHeightValues();
 }
+window.onbeforeunload = function () 
+{
+    window.scrollTo(0, 999999);
+};
 
 function setHeightValues()
 {
@@ -24,6 +31,7 @@ function setHeightValues()
     for (var i = 0; i < pages.length; i++) {
         pagesHeights[i] = pages[i].offsetTop;
     }
+    pagesHeights[4] = 999999999;
 }
 
 function scrollToBottom()
@@ -34,6 +42,8 @@ function scrollToBottom()
         block: 'end',
         inline: 'nearest'
     });
+    
+    window.scrollTo(0, 99999);
 }
 
 function generateTransitionBlocks()
@@ -53,8 +63,11 @@ function setNavRocket()
 
     var currentTopPageHeight = 0;
     var currentBotttomPageHeight = 0;
-    var currentBlockID = 0; 
     
+    currentHeight = Math.ceil(document.documentElement.scrollTop);
+    currentHeightPercentage = (currentHeight /  totalHeight) * 100;
+    currentHeightPercentage = currentHeightPercentage.toFixed(2);
+
     for (var i = 0; i < 4; i++) {
         if(currentHeight >= pagesHeights[i] && currentHeight < pagesHeights[i + 1])
         {
@@ -63,12 +76,11 @@ function setNavRocket()
             currentBlockID = i + 1;
         }
     }
-    currentHeight = document.documentElement.scrollTop;
-    currentHeightPercentage = (currentHeight /  totalHeight) * 100;
-    currentHeightPercentage = currentHeightPercentage.toFixed(2);
+
+    //console.log(currentHeight + " | " + currentBlockID);
+    //if(currentBlockID == 3) console.log(pagesHeights[3]);
 
     var currentPageHeightPercentage = (currentHeight - currentTopPageHeight) / (currentBotttomPageHeight - currentTopPageHeight) * 100;
-    if(currentHeight == totalHeight) { currentPageHeightPercentage = 100; currentBlockID = 3; }
 
     var navRocketHeight = currentPageHeightPercentage;
 
@@ -76,19 +88,64 @@ function setNavRocket()
     var higherPerOffset = lowerPerOffset + 25;
 
     navRocketHeight = ((navRocketHeight - 0) / (100 - 0)) * (higherPerOffset - lowerPerOffset) + lowerPerOffset;
-    navRocket.style.top = navRocketHeight + "%";  
+    navRocket.style.top = navRocketHeight + "%"; 
+}
+
+function setContentRocket()
+{
+    
+    var myElement = document.getElementsByClassName("contentTopBarMainCentre");
+    var contentRocket = document.getElementById("contentRocket");
+    var rect = myElement[currentBlockID - 1].getBoundingClientRect();
+
+    contentRocket.style.left = rect.left + "px";
+    contentRocket.style.top = rect.top + "px";
+    contentRocket.style.width = rect.width + "px";
+    contentRocket.style.height = rect.height + "px";
+}
+
+function goToNavPage(pageID)
+{
+    window.scrollTo(0, pagesHeights[pageID]);
+}
+
+async function scrollToNextPage()
+{
+    if(!canTransition) return;
+    canTransition = false;
+
+    var scrollSpeed = 30;
+    var startPos = pagesHeights[currentBlockID - 1];
+    var endPos = pagesHeights[currentBlockID - 2];
+
+    var contentRocket = document.getElementById("contentRocket");
+    var transitionTime = 1;
+    
+    contentRocket.style.animation = "rocketOut " + transitionTime + "s";
+    contentRocket.style.animationFillMode = "forwards";
+
+    for(var i = startPos; i > endPos; i -= scrollSpeed)
+    {
+        window.scrollTo(0, i);
+        await new Promise(resolve => setTimeout(resolve, 10));
+    }   
+
+    window.scrollTo(0, endPos);
+    contentRocket.style.animation = "rocketIn " + transitionTime + "s";
+    canTransition = true;
 }
 
 function update()
 {
     setNavRocket();
+    setContentRocket();
 }
 
 document.addEventListener('keypress', (event) => {
     var code = event.code;
     if(code == "Space")
     {
-        
+        window.scrollTo(0, 999999);
     }
   }, false);
 

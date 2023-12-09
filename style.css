@@ -6,6 +6,8 @@ html{
 
 body{
     /* overflow: hidden; */
+    padding: 0;
+    margin: 0;
 }
 
 body::-webkit-scrollbar {
@@ -19,16 +21,58 @@ body::-webkit-scrollbar {
 
  #sideNavBar
  {
-    width: 50px;
+    width: 30px;
  }
 
  .navItem{
     text-decoration: none;
-    color: black;
  }
 
  .contentPage{
-    color:black;
+    max-width: 100%;
+ }
+
+ .contentTopBar{
+   /* background-color: orangered; */
+   height: 70px;
+ }
+  .contentBottomBar{
+   /* background-color: orangered; */
+   height: 40px;
+ }
+
+ .contentWrapper{
+   background-color: orange;
+   margin-left: auto;
+   margin-right: auto;
+   width: 95%;
+ }
+
+ .contentTopBarLeft{
+   height: 75%;
+   background-color: orange;
+   clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+ }
+ .contentTopBarRight{
+   height: 75%;
+   background-color: orange;
+   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+ }
+.contentTopBarMiddle
+ {
+    /* background-color: yellow; */
+   width: 80px;
+   height: 100%;
+ }
+
+ .contentTopBarMainCentre
+ {
+   /* background-color: orangered; */
+   width: 40%;
+   height: 90%;
+   margin-top: 4%;
+   margin-left: auto;
+   margin-right: auto;
  }
 
  .navItem:hover
@@ -43,19 +87,40 @@ body::-webkit-scrollbar {
  }
 
 #navRocket{
-    width: 25px;
-    height: 50px;
+    width: 14px;
+    height: 28px;
     position: absolute;
     background-color: darkmagenta;
     /* background-image: url(Images/rocket1.png); */
     background-size: cover;
     transform: translate(-50%, -50%);
-    top: 0%;
+    top: 87.5%;
     left: 50%;
     margin-left:auto;
     margin-right:auto;
+    padding: 0;
 }
 
 #contentRocket{
+   width: 30px;
+   height: 60px;
+   background-color: darkmagenta;
+   /* background-image: url(Images/rocket1.png); */
+   background-size: cover;
 
+   position: fixed;
+   left: 0%;
+   top: 0%;
 }
+
+@keyframes rocketOut
+{
+   0%   {top: 0.5%;}
+   100% {top: 45%;}
+}
+@keyframes rocketIn
+{
+   0%   {top: 45%;}
+   100% {top: 0.5%;}
+}
+

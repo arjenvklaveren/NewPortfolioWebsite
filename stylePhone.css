@@ -1,0 +1,80 @@
+@media only screen and (min-width: 0px) {
+    .contentTopBar
+    {
+        height: 30px;
+    }
+    .contentTopBarMiddle
+    {
+       width: 40px;
+    }
+    .contentBottomBar{
+        height: 20px;
+    }
+    .contentWrapper{
+        width: 85%;
+    }
+}
+@media only screen and (min-width: 270px) {
+    .contentTopBar
+    {
+        height: 40px;
+    }
+    .contentTopBarMiddle
+    {
+       width: 50px;
+    }
+    .contentBottomBar{
+        height: 25px;
+    }
+    .contentWrapper{
+        width: 87.5%;
+    }
+}
+@media only screen and (min-width: 480px) {
+    .contentTopBar
+    {
+        height: 50px;
+    }
+    .contentTopBarMiddle
+    {
+       width: 60px;
+    }
+    .contentBottomBar{
+        height: 30px;
+    }
+    .contentWrapper{
+        width: 90%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .contentTopBar
+    {
+        height: 60px;
+    }
+    .contentTopBarMiddle
+    {
+       width: 70px;
+    }
+    .contentBottomBar{
+        height: 35px;
+    }
+    .contentWrapper{
+        width: 92.5%;
+    }
+}
+@media only screen and (min-width: 1250px) {
+    .contentTopBar
+    {
+        height: 70px;
+    }
+    .contentTopBarMiddle
+    {
+       width: 80px;
+    }
+    .contentBottomBar{
+        height: 40px;
+    }
+    .contentWrapper{
+        width: 95%;
+    }
+}
