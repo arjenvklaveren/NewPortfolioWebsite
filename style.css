@@ -42,7 +42,7 @@ body::-webkit-scrollbar {
  }
 
  .contentWrapper{
-   background-color: orange;
+   background-color: #ffa500;
    margin-left: auto;
    margin-right: auto;
    width: 95%;
@@ -50,12 +50,12 @@ body::-webkit-scrollbar {
 
  .contentTopBarLeft{
    height: 75%;
-   background-color: orange;
+   background-color: #ffa500;
    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
  }
  .contentTopBarRight{
    height: 75%;
-   background-color: orange;
+   background-color: #ffa500;
    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
  }
 .contentTopBarMiddle
@@ -73,6 +73,21 @@ body::-webkit-scrollbar {
    margin-top: 4%;
    margin-left: auto;
    margin-right: auto;
+ }
+
+ .contentBottomButton
+ {
+   width: 150px;
+   height: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   filter: invert(65%) sepia(73%) saturate(2340%) hue-rotate(359deg) brightness(185%) contrast(104%);
+   background-image: url(Images/downArrow.png);
+   background-size: cover;
+ }
+ .contentBottomButton:hover
+ {
+   cursor: pointer;
  }
 
  .navItem:hover
@@ -116,6 +131,7 @@ body::-webkit-scrollbar {
 @keyframes rocketOut
 {
    0%   {top: 0.5%;}
+   95% {top: 45%;}
    100% {top: 45%;}
 }
 @keyframes rocketIn

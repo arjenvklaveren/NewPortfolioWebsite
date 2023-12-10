@@ -3,6 +3,7 @@ var currentHeight;
 var currentHeightPercentage;
 
 var pagesHeights = [];
+var transitionBlocks = [];
 
 var currentBlockID = 4;
 
@@ -51,10 +52,40 @@ function generateTransitionBlocks()
     //set random height of transition blocks
     var blocks = document.getElementsByClassName("transitionBlock");
     for (var i = 0; i < blocks.length; i++) {
-        var randomHeight = Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000;
+        var randomHeight = Math.floor(Math.random() * (10000 - 2000 + 1)) + 2000;
         blocks[i].style.height = randomHeight + "px";
+        transitionBlocks[i] = blocks[i];
     }
     totalHeight = document.body.scrollHeight;
+}
+
+function populateTransitionBlock(block)
+{
+    // const folderPath = 'Images/TransitionRandom/';
+    // const imageArray = ['image1.jpg', 'image2.jpg', 'image3.jpg'];
+
+    // var numImages = 1;
+
+    // for (let i = 0; i < numImages; i++) 
+    // {
+    //     const image = document.createElement('img');
+
+    //     const randomX = Math.floor(Math.random() * (block.getBoundingClientRect().width - 100));
+    //     const randomY = Math.floor(Math.random() * (block.getBoundingClientRect().height - 100));
+
+    //     const randomNumber = Math.floor(Math.random() * imageArray.length);
+    //     image.src = folderPath + imageArray[randomNumber];
+
+    //     image.style.position = "absolute";
+
+    //     image.style.left = 0 + "px";
+    //     image.style.top = block.offsetTop + "px";
+
+    //     // image.style.left = randomX + "px";
+    //     // image.style.top = randomY + "px";
+
+    //     block.appendChild(image);
+    // }
 }
 
 function setNavRocket()
@@ -76,9 +107,6 @@ function setNavRocket()
             currentBlockID = i + 1;
         }
     }
-
-    //console.log(currentHeight + " | " + currentBlockID);
-    //if(currentBlockID == 3) console.log(pagesHeights[3]);
 
     var currentPageHeightPercentage = (currentHeight - currentTopPageHeight) / (currentBotttomPageHeight - currentTopPageHeight) * 100;
 
@@ -111,10 +139,10 @@ function goToNavPage(pageID)
 
 async function scrollToNextPage()
 {
-    if(!canTransition) return;
+    if(!canTransition || currentBlockID == 1) return;
     canTransition = false;
 
-    var scrollSpeed = 30;
+    var scrollSpeed = 40;
     var startPos = pagesHeights[currentBlockID - 1];
     var endPos = pagesHeights[currentBlockID - 2];
 
@@ -124,11 +152,17 @@ async function scrollToNextPage()
     contentRocket.style.animation = "rocketOut " + transitionTime + "s";
     contentRocket.style.animationFillMode = "forwards";
 
+    visuals = new TransitionVisuals(transitionBlocks[currentBlockID - 2]);
+
     for(var i = startPos; i > endPos; i -= scrollSpeed)
     {
         window.scrollTo(0, i);
+        visuals.addVisual(i);
+        visuals.updateVisuals();
+         
         await new Promise(resolve => setTimeout(resolve, 10));
     }   
+    visuals.destroyVisuals();
 
     window.scrollTo(0, endPos);
     contentRocket.style.animation = "rocketIn " + transitionTime + "s";
@@ -141,12 +175,67 @@ function update()
     setContentRocket();
 }
 
-document.addEventListener('keypress', (event) => {
-    var code = event.code;
-    if(code == "Space")
-    {
-        window.scrollTo(0, 999999);
-    }
-  }, false);
+class TransitionVisuals
+{
+    #currentBlock;
+    #imageVisuals = [];
+    #folderPath = 'Images/TransitionRandom/';
+    #imageArray = ['image1.png', 'image2.png', 'image3.png'];
 
-const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+    constructor(block)
+    {
+        this.#currentBlock = block;
+    }
+    updateVisuals() 
+    {
+        for(var i = 0; i < this.#imageVisuals.length; i++)
+        {   
+            var currentTop = parseInt(this.#imageVisuals[i].style.top) || 0;
+            if(currentTop > this.#currentBlock.offsetTop) 
+            { 
+                var size = parseInt(this.#imageVisuals[i].style.width) || 0;
+                this.#imageVisuals[i].style.top = (currentTop - (size / 2)) + "px"; 
+            }
+            else
+            {
+                this.#imageVisuals[i].remove();
+            }
+            if(this.#imageVisuals[i].getBoundingClientRect().bottom > window.innerHeight)
+            {
+                this.#imageVisuals[i].remove();
+            }
+        }
+    }
+    addVisual(offset)
+    {
+        if(offset < this.#currentBlock.offsetTop) return;
+        if(Math.floor(Math.random() * 101) < 33) return;
+
+        var blockRect = this.#currentBlock.getBoundingClientRect();
+
+        const image = document.createElement('img');
+
+        const randomNumber = Math.floor(Math.random() * this.#imageArray.length);
+        image.src = this.#folderPath + this.#imageArray[randomNumber];
+
+        image.style.position = "absolute";
+
+        var imageSize = Math.floor(Math.random() * (20 - 2 + 1) + 2);     
+        image.style.width = imageSize + "px";
+        image.style.height = imageSize + "px";
+
+        var widthOffset = Math.floor(Math.random() * blockRect.width - imageSize);
+        image.style.left = widthOffset + "px";
+        image.style.top = offset + "px";
+
+        this.#currentBlock.appendChild(image);
+        this.#imageVisuals.push(image);
+    }
+    destroyVisuals()
+    {
+        for(var i = 0; i < this.#imageVisuals.length; i++)
+        {
+            this.#imageVisuals[i].remove();
+        }
+    }
+}

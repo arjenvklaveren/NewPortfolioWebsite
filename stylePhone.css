@@ -13,6 +13,10 @@
     .contentWrapper{
         width: 85%;
     }
+    .contentBottomButton
+    {
+        width: 50px;
+    }
 }
 @media only screen and (min-width: 270px) {
     .contentTopBar
@@ -28,6 +32,10 @@
     }
     .contentWrapper{
         width: 87.5%;
+    }
+    .contentBottomButton
+    {
+        width: 75px;
     }
 }
 @media only screen and (min-width: 480px) {
@@ -45,6 +53,10 @@
     .contentWrapper{
         width: 90%;
     }
+    .contentBottomButton
+    {
+        width: 100px;
+    }
 }
 @media only screen and (min-width: 768px) {
     .contentTopBar
@@ -61,6 +73,10 @@
     .contentWrapper{
         width: 92.5%;
     }
+    .contentBottomButton
+    {
+        width: 125px;
+    }
 }
 @media only screen and (min-width: 1250px) {
     .contentTopBar
@@ -76,5 +92,9 @@
     }
     .contentWrapper{
         width: 95%;
+    }
+    .contentBottomButton
+    {
+        width: 150px;
     }
 }
