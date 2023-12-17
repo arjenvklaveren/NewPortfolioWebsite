@@ -1,0 +1,158 @@
+html {
+  scroll-behavior: auto !important;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  overflow-y: hidden;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#containerMain{
+  height: 100%;
+}
+#rowMain{
+  height: 100%;
+}
+#mainContent{
+  height: 100%;
+}
+
+.contentPage {
+  max-width: 100%;
+  height: 100%;
+}
+
+.transitionBlock {
+  background-color: black;
+}
+
+
+/* Navigation bar */
+#sideNavBar {
+  width: 30px;
+}
+#sideNavBarDiv
+{
+  
+}
+.navItem {
+  text-decoration: none;
+}
+.navItem:hover {
+  background-color: grey !important;
+  cursor: pointer;
+}
+
+
+/* Content top bar */
+.contentTopBar {
+  height: 70px;
+}
+.contentTopBarLeft {
+  height: 75%;
+  background-color: #ffa500;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+.contentTopBarRight {
+  height: 75%;
+  background-color: #ffa500;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+}
+.contentTopBarMiddle {
+  /* background-color: yellow; */
+  width: 80px;
+  height: 100%;
+}
+.contentTopBarMainCentre {
+  /* background-color: orangered; */
+  width: 40%;
+  height: 90%;
+  margin-top: 4%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Content bottom bar */
+.contentBottomBar {
+  height: 40px;
+}
+.contentBottomButton {
+  width: 150px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  filter: invert(65%) sepia(73%) saturate(2340%) hue-rotate(359deg) brightness(185%) contrast(104%);
+  background-image: url(Images/downArrow.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.contentBottomButton:hover {
+  cursor: pointer;
+}
+
+
+/* Content wrapper */
+.contentWrapper {
+  background-color: #ffa500;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+/* Rockets */
+#navRocket {
+  width: 14px;
+  height: 28px;
+  position: absolute;
+  background-color: darkmagenta;
+  /* background-image: url(Images/rocket1.png); */
+  background-size: cover;
+  transform: translate(-50%, -50%);
+  top: 87.5%;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+#contentRocket {
+  width: 30px;
+  height: 60px;
+  background-color: darkmagenta;
+  /* background-image: url(Images/rocket1.png); */
+  background-size: cover;
+  position: fixed;
+  left: 0%;
+  top: 0%;
+}
+#contentRocket:hover{
+  cursor: pointer;
+}
+
+
+/* Animations */
+@keyframes rocketOut {
+  0% {top: 0.5%;}
+  95% {top: 45%;}
+  100% {top: 45%;
+  }
+}
+@keyframes rocketIn {
+  0% {top: 45%;}
+  100% {top: 0.5%;}
+}

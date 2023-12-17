@@ -1,0 +1,113 @@
+@media only screen and (min-width: 0px) {
+    #aboutLeftInfoDiv p{
+        font-size: 0.6rem;
+    }
+    #aboutPicture{
+        width: 120px;
+    }
+
+    .projectCard{
+        width: 34h;
+        height: 19vh;
+    }
+
+    .contactLinkDiv{
+        width: 90%;
+    }
+    #contactLeftDiv{
+        height: 80%;
+    }
+    #contactRightDiv{
+        height: 20%;
+    }
+}
+@media only screen and (min-width: 270px) {
+    #aboutLeftInfoDiv p{
+        font-size: 0.7rem;
+    }
+    #aboutPicture{
+        width: 140px;
+    }
+
+    .projectCard{
+        width: 38vh;
+        height: 23vh;
+    }
+
+    .contactLinkDiv{
+        width: 70%;
+    }
+    #contactLeftDiv{
+        height: 60%;
+    }
+    #contactRightDiv{
+        height: 40%;
+    }
+}
+@media only screen and (min-width: 480px) {
+    #aboutLeftInfoDiv p{
+        font-size: 0.8rem;   
+    }
+    #aboutPicture{
+        width: 160px;
+    }
+    .projectCard{
+        width: 42vh;
+        height: 27vh;
+    }
+
+    .contactLinkDiv{
+        width: 50%;
+    }
+    #contactLeftDiv{
+        height: 60%;
+    }
+    #contactRightDiv{
+        height: 40%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    #aboutLeftInfoDiv p{
+        font-size: 0.9rem;
+    }
+    #aboutPicture{
+        width: 75%;
+    }
+    .projectCard{
+        width: 46vh;
+        height: 31vh;
+    }
+
+    .contactLinkDiv{
+        width: 75%;
+    }
+    #contactLeftDiv{
+        height: 100%;
+    }
+    #contactRightDiv{
+        height: 100%;
+    }
+}
+@media only screen and (min-width: 1250px) {
+    #aboutLeftInfoDiv p{
+        font-size: 1rem;
+    }
+    #aboutPicture{
+        width: 75%;
+    }
+
+    .projectCard{
+        width: 50vh;
+        height: 35vh;
+    }
+
+    .contactLinkDiv{
+        width: 75%;
+    }
+    #contactLeftDiv{
+        height: 100%;
+    }
+    #contactRightDiv{
+        height: 100%;
+    }
+}
