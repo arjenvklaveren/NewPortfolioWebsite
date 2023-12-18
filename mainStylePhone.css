@@ -1,7 +1,7 @@
 @media only screen and (min-width: 0px) {
     .contentTopBar
     {
-        height: 30px;
+        height: 10%;
     }
     .contentTopBarMiddle
     {
@@ -12,16 +12,20 @@
     }
     .contentWrapper{
         /* width: 85%; */
+        height: 87%;
     }
     .contentBottomButton
     {
         width: 50px;
     }
+    .contentTopBarMainCentre{
+        width: 80%;
+    }
 }
 @media only screen and (min-width: 270px) {
     .contentTopBar
     {
-        height: 40px;
+        height: 10%;
     }
     .contentTopBarMiddle
     {
@@ -32,16 +36,20 @@
     }
     .contentWrapper{
         /* width: 87.5%; */
+        height: 86.5%;
     }
     .contentBottomButton
     {
         width: 75px;
     }
+    .contentTopBarMainCentre{
+        width: 70%;
+    }
 }
 @media only screen and (min-width: 480px) {
     .contentTopBar
     {
-        height: 50px;
+        height: 10%;
     }
     .contentTopBarMiddle
     {
@@ -52,16 +60,20 @@
     }
     .contentWrapper{
         /* width: 90%; */
+        height: 86%;
     }
     .contentBottomButton
     {
         width: 100px;
     }
+    .contentTopBarMainCentre{
+        width: 60%;
+    }
 }
 @media only screen and (min-width: 768px) {
     .contentTopBar
     {
-        height: 60px;
+        height: 10%;
     }
     .contentTopBarMiddle
     {
@@ -72,16 +84,20 @@
     }
     .contentWrapper{
         /* width: 92.5%; */
+        height: 85.5%;
     }
     .contentBottomButton
     {
         width: 125px;
     }
+    .contentTopBarMainCentre{
+        width: 50%;
+    }
 }
 @media only screen and (min-width: 1250px) {
     .contentTopBar
     {
-        height: 70px;
+        height: 10%;
     }
     .contentTopBarMiddle
     {
@@ -92,9 +108,13 @@
     }
     .contentWrapper{
         /* width: 95%; */
+        height: 85%;
     }
     .contentBottomButton
     {
         width: 150px;
+    }
+    .contentTopBarMainCentre{
+        width: 40%;
     }
 }

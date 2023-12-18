@@ -3,6 +3,7 @@ var currentHeight;
 var currentHeightPercentage;
 
 var pagesHeights = [];
+var contentPages = [];
 var transitionBlocks = [];
 
 var currentBlockID = 1;
@@ -38,6 +39,7 @@ function setHeightValues()
     var pages = document.getElementsByClassName("contentPage");
     for (var i = 0; i < pages.length; i++) {
         pagesHeights[i] = pages[i].offsetTop;
+        contentPages[i] = pages[i];
     }
     pagesHeights[4] = 999999999;
 }
@@ -59,7 +61,7 @@ function generateTransitionBlocks()
     //set random height of transition blocks
     var blocks = document.getElementsByClassName("transitionBlock");
     for (var i = 0; i < blocks.length; i++) {
-        var randomHeight = Math.floor(Math.random() * (10000 - 2000 + 1)) + 2000;
+        var randomHeight = Math.floor(Math.random() * (8000 - 4000 + 1)) + 4000;
         blocks[i].style.height = randomHeight + "px";
         transitionBlocks[i] = blocks[i];
     }
@@ -68,8 +70,6 @@ function generateTransitionBlocks()
 function setContentPageHeight()
 {
     if(!isMobileDevice()) return;
-
-    console.log("OEIEIEIEI");
 
     var testPage = document.getElementById('homePage');
     testPage.setAttribute('style', 'height: ' + window.innerHeight + 'px !important');
@@ -138,16 +138,29 @@ async function scrollToNextPage()
     canTransition = false;
 
     var scrollSpeed = 40;
+
     var startPos = pagesHeights[currentBlockID - 1];
     var endPos = pagesHeights[currentBlockID - 2];
 
     var contentRocket = document.getElementById("contentRocket");
-    var transitionTime = 1;
+    var transitionTime = 2;
     
     contentRocket.style.animation = "rocketOut " + transitionTime + "s";
     contentRocket.style.animationFillMode = "forwards";
 
     visuals = new TransitionVisuals(transitionBlocks[currentBlockID - 2]);
+
+    var currentWrapperDiv = contentPages[currentBlockID - 1].getElementsByClassName('contentWrapper');
+    var nextWrapperDiv = contentPages[currentBlockID - 2].getElementsByClassName('contentWrapper');
+    var currentFooterDiv = contentPages[currentBlockID - 1].getElementsByClassName('contentBottomBar');
+    var nextFooterDiv = contentPages[currentBlockID - 2].getElementsByClassName('contentBottomBar');
+
+    $(currentWrapperDiv).fadeOut(500, "linear"); 
+    $(nextWrapperDiv).fadeOut(500, "linear");  
+    $(currentFooterDiv).fadeOut(500, "linear");  
+    $(nextFooterDiv).fadeOut(500, "linear"); 
+
+    await new Promise(resolve => setTimeout(resolve, 500));
 
     for(var i = startPos; i > endPos; i -= scrollSpeed)
     {
@@ -161,6 +174,13 @@ async function scrollToNextPage()
 
     window.scrollTo(0, endPos);
     contentRocket.style.animation = "rocketIn " + transitionTime + "s";
+
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    $(currentWrapperDiv).fadeIn(500, "linear"); 
+    $(nextWrapperDiv).fadeIn(500, "linear"); 
+    $(currentFooterDiv).fadeIn(500, "linear"); 
+    $(nextFooterDiv).fadeIn(500, "linear");
+
     canTransition = true;
 }
 
@@ -218,7 +238,7 @@ function projectsPreviousPage()
 function onClickProjectCard(cardContentID)
 {
     var allProjectCardContent =  document.getElementsByClassName('projectCardContent');
-    var currentSelectedCard = allProjectCardContent[cardContentID];
+    var currentSelectedCard = allProjectCardContent[cardContentID - 1];
 
     var contentWrapper = document.getElementById('projectsMainDiv');
     var contentWrapperBox = contentWrapper.getBoundingClientRect();
@@ -228,7 +248,7 @@ function onClickProjectCard(cardContentID)
     currentSelectedCard.style.width = (contentWrapper.offsetWidth + 1) + 'px';
     currentSelectedCard.style.height = contentWrapper.offsetHeight+ 'px';;
     currentSelectedCard.style.left = contentWrapperBox.left +'px';
-    currentSelectedCard.style.top = contentWrapperBox.top + (pagesHeights[currentBlockID - 1] - 1) + 'px';
+    currentSelectedCard.style.top = (contentWrapperBox.top - 1) + 'px';
 
     hasSelectedCard = true;
 }
