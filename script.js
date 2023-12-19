@@ -69,7 +69,7 @@ function generateTransitionBlocks()
 
 function setContentPageHeight()
 {
-    if(!isMobileDevice()) return;
+    if(isMobileDevice()) return;
 
     var testPage = document.getElementById('homePage');
     testPage.setAttribute('style', 'height: ' + window.innerHeight + 'px !important');
@@ -117,9 +117,14 @@ function setNavRocket()
 
 function setContentRocket()
 {
-    var myElement = document.getElementsByClassName("contentTopBarMainCentre");
+    var fixedNavBar = document.getElementById('headerNavBar');
+    var sampleID = (currentBlockID == 1) ? 2 : 0;
+    var sampleNavBar = document.getElementsByClassName("contentTopBar")[sampleID];
+    fixedNavBar.style.width = sampleNavBar.getBoundingClientRect().width + 'px';
+
+    var navMiddle = document.getElementById("headerNavBarMainCentre");
     var contentRocket = document.getElementById("contentRocket");
-    var rect = myElement[currentBlockID - 1].getBoundingClientRect();
+    var rect = navMiddle.getBoundingClientRect();
 
     contentRocket.style.left = rect.left + "px";
     contentRocket.style.top = rect.top + "px";
@@ -129,7 +134,7 @@ function setContentRocket()
 
 function goToNavPage(pageID)
 {
-    window.scrollTo(0, pagesHeights[pageID]);
+    window.scrollTo(0, pagesHeights[pageID] + 1);
 }
 
 async function scrollToNextPage()
@@ -140,7 +145,7 @@ async function scrollToNextPage()
     var scrollSpeed = 40;
 
     var startPos = pagesHeights[currentBlockID - 1];
-    var endPos = pagesHeights[currentBlockID - 2];
+    var endPos = pagesHeights[currentBlockID - 2] + 1;
 
     var contentRocket = document.getElementById("contentRocket");
     var transitionTime = 2;
@@ -150,15 +155,21 @@ async function scrollToNextPage()
 
     visuals = new TransitionVisuals(transitionBlocks[currentBlockID - 2]);
 
+    document.getElementById('homePageBackgroundMain').setAttribute('style', 'overflow-y: visible !important');
+
     var currentWrapperDiv = contentPages[currentBlockID - 1].getElementsByClassName('contentWrapper');
     var nextWrapperDiv = contentPages[currentBlockID - 2].getElementsByClassName('contentWrapper');
     var currentFooterDiv = contentPages[currentBlockID - 1].getElementsByClassName('contentBottomBar');
     var nextFooterDiv = contentPages[currentBlockID - 2].getElementsByClassName('contentBottomBar');
+    var currentHeaderDiv = contentPages[currentBlockID - 1].getElementsByClassName('contentTopBar');
+    var nextHeaderDiv = contentPages[currentBlockID - 2].getElementsByClassName('contentTopBar');
 
     $(currentWrapperDiv).fadeOut(500, "linear"); 
     $(nextWrapperDiv).fadeOut(500, "linear");  
     $(currentFooterDiv).fadeOut(500, "linear");  
     $(nextFooterDiv).fadeOut(500, "linear"); 
+    $(currentHeaderDiv).fadeOut(500, "linear"); 
+    $(nextHeaderDiv).fadeOut(500, "linear"); 
 
     await new Promise(resolve => setTimeout(resolve, 500));
 
@@ -180,6 +191,10 @@ async function scrollToNextPage()
     $(nextWrapperDiv).fadeIn(500, "linear"); 
     $(currentFooterDiv).fadeIn(500, "linear"); 
     $(nextFooterDiv).fadeIn(500, "linear");
+    $(currentHeaderDiv).fadeIn(500, "linear");
+    $(nextHeaderDiv).fadeIn(500, "linear");
+
+    document.getElementById('homePageBackgroundMain').setAttribute('style', 'overflow-y: hidden !important');
 
     canTransition = true;
 }

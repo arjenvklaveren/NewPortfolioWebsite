@@ -6,7 +6,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
-        <!-- Jquery -->
+        <!-- jquery -->
         <script src="Libraries/jquery-3.7.1.js"></script>
 
         <!-- my files -->
@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="pageStyle.css">
         <link rel="stylesheet" href="pageStylePhone.css">
         <script type="text/javascript" src="script.js"></script>
-        <script type="text/javascript" src="jquery.js"></script>
 
         <!-- other -->
         <meta charset="UTF-8">
@@ -37,8 +36,8 @@
                             </div>
                             <div class="col bg-primary contentTopBarRight"></div>
                         </div>
-                        <div class="col-12 border border-5 border-primary contentWrapper">
-                            <div id="contactMainDiv" class="row nopadding">
+                        <div class="col-12 contentWrapper">
+                            <div id="contactMainDiv" class="row nopadding border border-5 border-primary contentMainDiv">
                                 <div class="col-md-1 bg-white"></div>
                                 <div id="contactLeftDiv" class="col-md-5 row flex-column nopadding bg-white">
                                     <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-secondary">
@@ -105,7 +104,7 @@
                         </div>
 
                         <div class="pageBackground">
-                            <img class="planetVisual" src="Images/Visuals/testPlanet.png">
+                            <img id="contactPlanetVisual" class="planetVisual" src="Images/Visuals/testPlanet4.png">
                         </div>
                     </div>
 
@@ -120,8 +119,8 @@
                             </div>
                             <div class="col bg-success contentTopBarRight"></div>
                         </div>
-                        <div id="contentProjectWrapper" class="col-12 border border-5 border-success contentWrapper">
-                            <div id="projectsMainDiv" class="container-fluid d-flex nopadding flex-column">
+                        <div id="contentProjectWrapper" class="col-12 contentWrapper">
+                            <div id="projectsMainDiv" class="container-fluid d-flex nopadding flex-column border border-5 border-success contentMainDiv">
                                 <div id="projectsNavDiv" class="row col-12 nopadding bg-dark">
                                     <div class="col"></div>
                                     <div class="col-8 d-flex align-items-center justify-content-center text-center">
@@ -467,7 +466,7 @@
                         </div>
 
                         <div class="pageBackground">
-                            <img class="planetVisual" src="Images/Visuals/testPlanet.png">
+                            <img id="projectsPlanetVisual" class="planetVisual" src="Images/Visuals/testPlanet3.png">
                         </div>
                     </div>
 
@@ -482,8 +481,8 @@
                             </div>
                             <div class="col bg-danger contentTopBarRight"></div>
                         </div>
-                        <div class="col-12 border border-5 border-danger contentWrapper">
-                            <div id="aboutMainDiv" class="row nopadding">
+                        <div class="col-12 contentWrapper">
+                            <div id="aboutMainDiv" class="row nopadding border border-5 border-danger contentMainDiv">
                                 <div id="aboutLeftInfoDiv" class="col-md-8 bg-dark d-flex flex-column justify-content-center">
                                     <h1 class="text-center align-items-center">Who am I?</h1>
                                     <p class="">
@@ -509,7 +508,7 @@
                         </div>
 
                         <div class="pageBackground">
-                            <img class="planetVisual" src="Images/Visuals/testPlanet.png">
+                            <img id="aboutPlanetVisual" class="planetVisual" src="Images/Visuals/testPlanet2.png">
                         </div>
                     </div>
 
@@ -524,8 +523,8 @@
                             </div>
                             <div class="col bg-warning contentTopBarRight"></div>
                         </div>
-                        <div class="col-12 border border-5 border-warning contentWrapper">
-                            <div id="homeMainDiv" class="container-fluid">
+                        <div class="col-12 contentWrapper">
+                            <div id="homeMainDiv" class="container-fluid border border-5 border-warning contentMainDiv">
                                 <div id="homeTitleDiv" class="row nopadding">
                                     <div class="col-12 h-50 bg-light"></div>
                                     <div class="col-12 h-50 d-flex align-items-center justify-content-center text-center bg-dark">
@@ -559,14 +558,25 @@
                             </div>
                         </div>
 
-                        <div class="pageBackground">
-                            <img class="planetVisual" src="Images/Visuals/testPlanet.png">
+                        <div id="homePageBackgroundMain">
+                            <div class="pageBackground">
+                                <img id="homePlanetVisual" class="planetVisual" src="Images/Visuals/testPlanet1.png">
+                            </div>
                         </div>
                     </div>  
 
-                    <!-- Page navigation rocket -->
-                    <div id="contentRocket" onclick="scrollToNextPage()"></div>
+                    <div id="headerNavBar" class="col-12 row nopadding">
+                        <div id="headerNavBarLeft" class="col"></div>
+                        <div id="headerNavBarMiddle" class="col-4 nopadding">
+                            <div id="headerNavBarMainCentre"></div>
+                        </div>
+                        <div id="headerNavBarRight" class="col"></div>
+                    </div>
+
                 </div>
+
+                <!-- Page navigation rocket -->
+                <div id="contentRocket" onclick="scrollToNextPage()"></div>
 
                 <!-- Navigation bar -->
                 <div id="sideNavBar" class="col col-1 bg-light text-dark">
