@@ -34,10 +34,17 @@ body::-webkit-scrollbar {
 }
 
 .contentPage {
+  display:flex;
   max-width: 100%;
   height: 100%;
   position: relative;
+  z-index: 2;
 }
+.contentPageWrapper{
+  height: 100%;
+  z-index: 2;
+}
+
 .contentMainDiv{
   /* display: none !important; */
 }
@@ -132,7 +139,7 @@ body::-webkit-scrollbar {
   margin-right: auto;
   font-size: 5rem;
   transform: translate(0px, -5px);
-  background-color: black;
+  color: darkmagenta;
 }
 .contentBottomButton:hover {
   cursor: pointer;
@@ -200,6 +207,13 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100vh; 
   overflow-y: hidden;
+}
+
+#parralaxBackground
+{
+  position: fixed;
+  z-index: 1;
+  height: 100%;
 }
 
 /* Animations */

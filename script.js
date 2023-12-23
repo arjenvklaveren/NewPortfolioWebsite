@@ -6,6 +6,8 @@ var pagesHeights = [];
 var contentPages = [];
 var transitionBlocks = [];
 
+var parralaxBG;
+
 var currentBlockID = 1;
 
 var canTransition = true;
@@ -20,6 +22,9 @@ window.onload = function()
     generateTransitionBlocks();
     setHeightValues();
     scrollToBottom();
+
+    parralaxBG = new ParralaxBackground();
+
     setInterval(update, 10);
 };
 window.onresize = function()
@@ -69,10 +74,7 @@ function generateTransitionBlocks()
 
 function setContentPageHeight()
 {
-    if(isMobileDevice()) return;
-
-    var testPage = document.getElementById('homePage');
-    testPage.setAttribute('style', 'height: ' + window.innerHeight + 'px !important');
+    if(!isMobileDevice() || !canTransition) return;
 
     var pages = document.getElementsByClassName("contentPage");
     for (var i = 0; i < pages.length; i++) {
@@ -134,7 +136,7 @@ function setContentRocket()
 
 function goToNavPage(pageID)
 {
-    window.scrollTo(0, pagesHeights[pageID] + 1);
+    if(canTransition) window.scrollTo(0, pagesHeights[pageID] + 1);
 }
 
 async function scrollToNextPage()
@@ -153,49 +155,34 @@ async function scrollToNextPage()
     contentRocket.style.animation = "rocketOut " + transitionTime + "s";
     contentRocket.style.animationFillMode = "forwards";
 
-    visuals = new TransitionVisuals(transitionBlocks[currentBlockID - 2]);
-
     document.getElementById('homePageBackgroundMain').setAttribute('style', 'overflow-y: visible !important');
 
-    var currentWrapperDiv = contentPages[currentBlockID - 1].getElementsByClassName('contentWrapper');
-    var nextWrapperDiv = contentPages[currentBlockID - 2].getElementsByClassName('contentWrapper');
-    var currentFooterDiv = contentPages[currentBlockID - 1].getElementsByClassName('contentBottomBar');
-    var nextFooterDiv = contentPages[currentBlockID - 2].getElementsByClassName('contentBottomBar');
-    var currentHeaderDiv = contentPages[currentBlockID - 1].getElementsByClassName('contentTopBar');
-    var nextHeaderDiv = contentPages[currentBlockID - 2].getElementsByClassName('contentTopBar');
+    var currentFade = contentPages[currentBlockID - 1].getElementsByClassName('contentPageWrapper');
+    var nextFade = contentPages[currentBlockID - 2].getElementsByClassName('contentPageWrapper');
 
-    $(currentWrapperDiv).fadeOut(500, "linear"); 
-    $(nextWrapperDiv).fadeOut(500, "linear");  
-    $(currentFooterDiv).fadeOut(500, "linear");  
-    $(nextFooterDiv).fadeOut(500, "linear"); 
-    $(currentHeaderDiv).fadeOut(500, "linear"); 
-    $(nextHeaderDiv).fadeOut(500, "linear"); 
+    $(currentFade).animate({opacity: 0.0}, 500, 'linear');
+    $(nextFade).css('opacity', 0);
 
     await new Promise(resolve => setTimeout(resolve, 500));
 
     for(var i = startPos; i > endPos; i -= scrollSpeed)
     {
         window.scrollTo(0, i);
-        visuals.addVisual(i);
-        visuals.updateVisuals();
+        parralaxBG.updateVisuals();
          
         await new Promise(resolve => setTimeout(resolve, 10));
     }   
-    visuals.destroyVisuals();
-
     window.scrollTo(0, endPos);
     contentRocket.style.animation = "rocketIn " + transitionTime + "s";
 
     await new Promise(resolve => setTimeout(resolve, 1500));
-    $(currentWrapperDiv).fadeIn(500, "linear"); 
-    $(nextWrapperDiv).fadeIn(500, "linear"); 
-    $(currentFooterDiv).fadeIn(500, "linear"); 
-    $(nextFooterDiv).fadeIn(500, "linear");
-    $(currentHeaderDiv).fadeIn(500, "linear");
-    $(nextHeaderDiv).fadeIn(500, "linear");
+
+    $(currentFade).css('opacity', 1.0);
+    $(nextFade).animate({opacity: 1.0}, 500, 'linear');
 
     document.getElementById('homePageBackgroundMain').setAttribute('style', 'overflow-y: hidden !important');
 
+    await new Promise(resolve => setTimeout(resolve, 1000));
     canTransition = true;
 }
 
@@ -287,62 +274,82 @@ function update()
     setContentPageHeight();
 }
 
-class TransitionVisuals
+class ParralaxBackground
 {
-    #currentBlock;
     #imageVisuals = [];
     #folderPath = 'Images/TransitionRandom/';
     #imageArray = ['image1.png', 'image2.png', 'image3.png'];
 
-    constructor(block)
+    #container = document.getElementById('parralaxBackground');
+
+    #startImgCount = 50;
+
+    #randSeed = "Parralax";
+    #random = new Math.seedrandom(this.#randSeed);
+
+    constructor()
     {
-        this.#currentBlock = block;
+        this.#fillFullArea();
     }
-    updateVisuals() 
+
+    #fillFullArea()
     {
+        for(var i = 0; i < this.#startImgCount; i++)
+        {
+            this.createNewVisual();
+        }
+    }
+
+    updateVisuals()
+    {
+        const styleChanges = [];
         for(var i = 0; i < this.#imageVisuals.length; i++)
         {   
             var currentTop = parseInt(this.#imageVisuals[i].style.top) || 0;
-            if(currentTop > this.#currentBlock.offsetTop) 
+            if(currentTop >= 0) 
             { 
                 var size = parseInt(this.#imageVisuals[i].style.width) || 0;
-                this.#imageVisuals[i].style.top = (currentTop - (size / 2)) + "px"; 
+                styleChanges.push({index: i, top: currentTop + (size * 1.25), });  
             }
             else
             {
-                this.#imageVisuals[i].remove();
+                styleChanges.push({index: i,top: this.#container.getBoundingClientRect().height,});
             }
-            if(this.#imageVisuals[i].getBoundingClientRect().bottom > window.innerHeight)
+            if(currentTop > this.#container.getBoundingClientRect().height)
             {
-                this.#imageVisuals[i].remove();
+                styleChanges.push({index: i, top: 0,});
             }
         }
+        for (const change of styleChanges) {
+            this.#imageVisuals[change.index].style.top = change.top + 'px';
+        }
     }
-    addVisual(offset)
+
+    createNewVisual()
     {
-        if(offset < this.#currentBlock.offsetTop) return;
-        if(Math.floor(Math.random() * 101) < 33) return;
+        var blockRect = this.#container.getBoundingClientRect();
 
-        var blockRect = this.#currentBlock.getBoundingClientRect();
+        var image = document.createElement('img');
+    
+        var randomImg = Math.floor(this.#random() * this.#imageArray.length); 
 
-        const image = document.createElement('img');
-
-        const randomNumber = Math.floor(Math.random() * this.#imageArray.length);
-        image.src = this.#folderPath + this.#imageArray[randomNumber];
+        image.src = this.#folderPath + this.#imageArray[Math.floor(randomImg)];
 
         image.style.position = "absolute";
 
-        var imageSize = Math.floor(Math.random() * (20 - 2 + 1) + 2);     
+        var imageSize = Math.floor(this.#random() * (20 - 2 + 1) + 2);     
         image.style.width = imageSize + "px";
         image.style.height = imageSize + "px";
 
-        var widthOffset = Math.floor(Math.random() * blockRect.width - imageSize);
+        var widthOffset = Math.floor(this.#random() * blockRect.width - imageSize);
+        var heightOffset = Math.floor(this.#random() * blockRect.height - imageSize);
         image.style.left = widthOffset + "px";
-        image.style.top = offset + "px";
+        image.style.top = heightOffset + "px";
 
-        this.#currentBlock.appendChild(image);
+        this.#container.appendChild(image);
         this.#imageVisuals.push(image);
     }
+
     destroyVisuals()
     {
         for(var i = 0; i < this.#imageVisuals.length; i++)
@@ -365,4 +372,3 @@ function isMobileDevice() {
     return mobileRegex.test(navigator.userAgent);
   }
   
-

@@ -9,6 +9,9 @@
         <!-- jquery -->
         <script src="Libraries/jquery-3.7.1.js"></script>
 
+        <!-- seedrandom -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+
         <!-- my files -->
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="mainStylePhone.css">
@@ -28,78 +31,80 @@
                 <div id = mainContent class="col nopadding text-white">
 
                     <!-- Contact page -->
-                    <div id="contactPage" class="vh-100 container d-flex flex-column nopadding contentPage">
-                        <div class="col-12 row nopadding contentTopBar">
-                            <div class="col bg-primary contentTopBarLeft"></div>
-                            <div class="col-4 nopadding contentTopBarMiddle">
-                                <div class="contentTopBarMainCentre"></div>
-                            </div>
-                            <div class="col bg-primary contentTopBarRight"></div>
-                        </div>
-                        <div class="col-12 contentWrapper">
-                            <div id="contactMainDiv" class="row nopadding border border-5 border-primary contentMainDiv">
-                                <div class="col-md-1 bg-white"></div>
-                                <div id="contactLeftDiv" class="col-md-5 row flex-column nopadding bg-white">
-                                    <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-secondary">
-                                        <div class="contactLinkDiv">
-                                            <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
-                                            <p class="contactLinkText">@PlaceholderText</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-dark">
-                                        <div class="contactLinkDiv">
-                                            <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
-                                            <p class="contactLinkText">@PlaceholderText</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-secondary">
-                                        <div class="contactLinkDiv">
-                                            <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
-                                            <p class="contactLinkText">@PlaceholderText</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-dark">
-                                        <div class="contactLinkDiv">
-                                            <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
-                                            <p class="contactLinkText">@PlaceholderText</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-secondary">
-                                        <div class="contactLinkDiv">
-                                            <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
-                                            <p class="contactLinkText">@PlaceholderText</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-dark">
-                                        <div class="contactLinkDiv">
-                                            <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
-                                            <p class="contactLinkText">@PlaceholderText</p>
-                                        </div>
-                                    </div>
+                    <div id="contactPage" class="vh-100 container flex-column nopadding contentPage">
+                        <div class="col-12 row nopadding contentPageWrapper">
+                            <div class="col-12 row nopadding contentTopBar">
+                                <div class="col bg-primary contentTopBarLeft"></div>
+                                <div class="col-4 nopadding contentTopBarMiddle">
+                                    <div class="contentTopBarMainCentre"></div>
                                 </div>
-                                <div id="contactRightDiv" class="col-md-5 row flex-column nopadding bg-light">
-                                    <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-light">
-                                        <div id="contactFormDiv" class="bg-secondary">
-                                            <form>
-                                                <div class="form-group">
-                                                  <label for="exampleFormControlInput1" class="text-dark">Your email-address</label>
-                                                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                                </div>                                       
-                                                <div class="form-group">
-                                                  <label for="exampleFormControlTextarea1" class="text-dark">Your message</label>
-                                                  <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
-                                                </div>
-                                                <br><button type="submit" class="btn btn-primary">Submit</button>
-                                              </form>
+                                <div class="col bg-primary contentTopBarRight"></div>
+                            </div>
+                            <div class="col-12 contentWrapper">
+                                <div id="contactMainDiv" class="row nopadding border border-5 border-primary contentMainDiv">
+                                    <div class="col-md-1 bg-white"></div>
+                                    <div id="contactLeftDiv" class="col-md-5 row flex-column nopadding bg-white">
+                                        <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-secondary">
+                                            <div class="contactLinkDiv">
+                                                <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
+                                                <p class="contactLinkText">@PlaceholderText</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-dark">
+                                            <div class="contactLinkDiv">
+                                                <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
+                                                <p class="contactLinkText">@PlaceholderText</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-secondary">
+                                            <div class="contactLinkDiv">
+                                                <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
+                                                <p class="contactLinkText">@PlaceholderText</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-dark">
+                                            <div class="contactLinkDiv">
+                                                <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
+                                                <p class="contactLinkText">@PlaceholderText</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-secondary">
+                                            <div class="contactLinkDiv">
+                                                <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
+                                                <p class="contactLinkText">@PlaceholderText</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-dark">
+                                            <div class="contactLinkDiv">
+                                                <img src="Images/IconPlaceholder.jpg" class="contactLinkImg"></img>
+                                                <p class="contactLinkText">@PlaceholderText</p>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div id="contactRightDiv" class="col-md-5 row flex-column nopadding bg-light">
+                                        <div class="col-12 flex-fill d-flex align-items-center justify-content-center nopadding bg-light">
+                                            <div id="contactFormDiv" class="bg-secondary">
+                                                <form>
+                                                    <div class="form-group">
+                                                    <label for="exampleFormControlInput1" class="text-dark">Your email-address</label>
+                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                    </div>                                       
+                                                    <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1" class="text-dark">Your message</label>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
+                                                    </div>
+                                                    <br><button type="submit" class="btn btn-primary">Submit</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 bg-white"></div>
                                 </div>
-                                <div class="col-md-1 bg-white"></div>
                             </div>
-                        </div>
-                        <div class="col-12 contentBottomBar">
-                            <div onclick="goToNavPage(1)" class="d-flex align-items-center justify-content-center text-center text-primary contentBottomButton">
-                                <i class="bi bi-chevron-compact-down"></i>
+                            <div class="col-12 contentBottomBar">
+                                <div onclick="goToNavPage(1)" class="d-flex align-items-center justify-content-center text-center contentBottomButton">
+                                    <i class="bi bi-chevron-compact-down"></i>
+                                </div>
                             </div>
                         </div>
 
@@ -111,357 +116,359 @@
                     <div class="transitionBlock"></div>
 
                     <!-- Projects page -->
-                    <div id="projectsPage" class="vh-100 container d-flex flex-column nopadding contentPage">
-                        <div class="col-12 row nopadding contentTopBar">
-                            <div class="col bg-success contentTopBarLeft"></div>
-                            <div class="col-4 nopadding contentTopBarMiddle">
-                                <div class="contentTopBarMainCentre"></div>
+                    <div id="projectsPage" class="vh-100 container flex-column nopadding contentPage">
+                        <div class="col-12 row nopadding contentPageWrapper">
+                            <div class="col-12 row nopadding contentTopBar">
+                                <div class="col bg-success contentTopBarLeft"></div>
+                                <div class="col-4 nopadding contentTopBarMiddle">
+                                    <div class="contentTopBarMainCentre"></div>
+                                </div>
+                                <div class="col bg-success contentTopBarRight"></div>
                             </div>
-                            <div class="col bg-success contentTopBarRight"></div>
-                        </div>
-                        <div id="contentProjectWrapper" class="col-12 contentWrapper">
-                            <div id="projectsMainDiv" class="container-fluid d-flex nopadding flex-column border border-5 border-success contentMainDiv">
-                                <div id="projectsNavDiv" class="row col-12 nopadding bg-dark">
-                                    <div class="col"></div>
-                                    <div class="col-8 d-flex align-items-center justify-content-center text-center">
-                                        <i class="bi bi-caret-left-fill" onclick="projectsPreviousPage()"></i>
-                                        <span id="projectsCardsPageText">1 of 1</span>
-                                        <i class="bi bi-caret-right-fill" onclick="projectsNextPage()"></i>
+                            <div id="contentProjectWrapper" class="col-12 contentWrapper">
+                                <div id="projectsMainDiv" class="container-fluid d-flex nopadding flex-column border border-5 border-success contentMainDiv">
+                                    <div id="projectsNavDiv" class="row col-12 nopadding bg-dark">
+                                        <div class="col"></div>
+                                        <div class="col-8 d-flex align-items-center justify-content-center text-center">
+                                            <i class="bi bi-caret-left-fill" onclick="projectsPreviousPage()"></i>
+                                            <span id="projectsCardsPageText">1 of 1</span>
+                                            <i class="bi bi-caret-right-fill" onclick="projectsNextPage()"></i>
+                                        </div>
+                                        <div class="col"></div>
                                     </div>
-                                    <div class="col"></div>
-                                </div>
-                                <div id="projectsCardsDiv" class="col-12 row nopadding d-flex align-items-center justify-content-center flex-fill bg-secondary">
+                                    <div id="projectsCardsDiv" class="col-12 row nopadding d-flex align-items-center justify-content-center flex-fill bg-secondary">
 
-                                    <!-- Project cards -->
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(1)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 1</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 1</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <!-- Project cards -->
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(1)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 1</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 1</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(2)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 2</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 2</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(2)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 2</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 2</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(3)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 3</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 3</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(3)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 3</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 3</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(4)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 4</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 4</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(4)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 4</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 4</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(5)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 5</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 5</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(5)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 5</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 5</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(6)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 6</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 6</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(6)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 6</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 6</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(7)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 7</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 7</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(7)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 7</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 7</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(8)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 8</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 8</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(8)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 8</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 8</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(9)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 9</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 9</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(9)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 9</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 9</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(10)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 10</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 10</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(10)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 10</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 10</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(11)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 11</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 11</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(11)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 11</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 11</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
 
-                                    <div class="col-6 nopadding projectCard">
-                                        <div class="projectCardVisual" onclick="onClickProjectCard(12)"></div>
-                                        <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
-                                            <h4 style="margin: 0;">A cool project 12</h4>
-                                        </div>
-                                        <div class="row nopadding d-flex container-fluid projectCardContent">
-                                            <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
-                                                <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
-                                                <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 12</h3>
-                                                <div class="col bg-secondary"></div>
+                                        <div class="col-6 nopadding projectCard">
+                                            <div class="projectCardVisual" onclick="onClickProjectCard(12)"></div>
+                                            <div class="d-flex align-items-center justify-content-center text-center projectCardFooter" onclick="onClickProjectCard(0)">
+                                                <h4 style="margin: 0;">A cool project 12</h4>
                                             </div>
-                                            <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
-                                                <div class="col-md-6 bg-light projectCardContentLeft">
-                                                    <h2 class="">What is this?</h2>
-                                                    <p class="">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>
+                                            <div class="row nopadding d-flex container-fluid projectCardContent">
+                                                <div class="col-12 row nopadding bg-dark d-flex projectCardContentHeader">
+                                                    <i class="bi bi-arrow-return-left col d-flex align-items-center justify-content-center bg-secondary contentCardBackButton" onclick="onExitProjectCard()"></i>
+                                                    <h3 class="col-8 d-flex align-items-center justify-content-center text-center text-white projectCardContentHeaderText">A cool project 12</h3>
+                                                    <div class="col bg-secondary"></div>
                                                 </div>
-                                                <div class="col-md-6 bg-white projectCardContentRight">
-                                                    <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                <div class="col-12 bg-light nopadding flex-fill row projectCardContentMain">
+                                                    <div class="col-md-6 bg-light projectCardContentLeft">
+                                                        <h2 class="">What is this?</h2>
+                                                        <p class="">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 bg-white projectCardContentRight">
+                                                        <img class="projectCardContentMedia" src="Images/mediaPlaceholder.jpg">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>   
+                                        </div>   
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 contentBottomBar">
-                            <div onclick="goToNavPage(2)" class="d-flex align-items-center justify-content-center text-center text-success contentBottomButton">
-                                <i class="bi bi-chevron-compact-down"></i>
+                            <div class="col-12 contentBottomBar">
+                                <div onclick="goToNavPage(2)" class="d-flex align-items-center justify-content-center text-center contentBottomButton">
+                                    <i class="bi bi-chevron-compact-down"></i>
+                                </div>
                             </div>
                         </div>
 
@@ -473,37 +480,39 @@
                     <div class="transitionBlock"></div>
 
                     <!-- About page -->
-                    <div id="aboutPage" class="vh-100 container d-flex flex-column nopadding contentPage">
-                        <div class="col-12 row nopadding contentTopBar">
-                            <div class="col bg-danger contentTopBarLeft"></div>
-                            <div class="col-4 nopadding contentTopBarMiddle">
-                                <div class="contentTopBarMainCentre"></div>
-                            </div>
-                            <div class="col bg-danger contentTopBarRight"></div>
-                        </div>
-                        <div class="col-12 contentWrapper">
-                            <div id="aboutMainDiv" class="row nopadding border border-5 border-danger contentMainDiv">
-                                <div id="aboutLeftInfoDiv" class="col-md-8 bg-dark d-flex flex-column justify-content-center">
-                                    <h1 class="text-center align-items-center">Who am I?</h1>
-                                    <p class="">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                    <p class="">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
+                    <div id="aboutPage" class="vh-100 container flex-column nopadding contentPage">
+                        <div class="col-12 row nopadding contentPageWrapper">
+                            <div class="col-12 row nopadding contentTopBar">
+                                <div class="col bg-danger contentTopBarLeft"></div>
+                                <div class="col-4 nopadding contentTopBarMiddle">
+                                    <div class="contentTopBarMainCentre"></div>
                                 </div>
-                                <div id="aboutRightInfoDiv" class="col-md-4 nopadding bg-secondary d-flex align-items-center justify-content-center">
-                                    <img src="Images/PortraitPlaceholder.jpg" id="aboutPicture"></img>
+                                <div class="col bg-danger contentTopBarRight"></div>
+                            </div>
+                            <div class="col-12 contentWrapper">
+                                <div id="aboutMainDiv" class="row nopadding border border-5 border-danger contentMainDiv">
+                                    <div id="aboutLeftInfoDiv" class="col-md-8 bg-dark d-flex flex-column justify-content-center">
+                                        <h1 class="text-center align-items-center">Who am I?</h1>
+                                        <p class="">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        </p>
+                                        <p class="">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        </p>
+                                    </div>
+                                    <div id="aboutRightInfoDiv" class="col-md-4 nopadding bg-secondary d-flex align-items-center justify-content-center">
+                                        <img src="Images/PortraitPlaceholder.jpg" id="aboutPicture"></img>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 contentBottomBar">
-                            <div onclick="goToNavPage(3)" class="d-flex align-items-center justify-content-center text-center text-danger contentBottomButton">
-                                <i class="bi bi-chevron-compact-down"></i>
+                            <div class="col-12 contentBottomBar">
+                                <div onclick="goToNavPage(3)" class="d-flex align-items-center justify-content-center text-center contentBottomButton">
+                                    <i class="bi bi-chevron-compact-down"></i>
+                                </div>
                             </div>
                         </div>
 
@@ -515,46 +524,48 @@
                     <div class="transitionBlock"></div>
 
                     <!-- Home page -->
-                    <div id="homePage" class="vh-100 container d-flex flex-column nopadding contentPage">
-                        <div class="col-12 row nopadding contentTopBar">
-                            <div class="col bg-warning contentTopBarLeft"></div>
-                            <div class="col-4 nopadding contentTopBarMiddle">
-                                <div class="contentTopBarMainCentre"></div>
+                    <div id="homePage" class="vh-100 container flex-column nopadding contentPage">
+                        <div class="col-12 row nopadding contentPageWrapper">
+                            <div class="col-12 row nopadding contentTopBar">
+                                <div class="col bg-warning contentTopBarLeft"></div>
+                                <div class="col-4 nopadding contentTopBarMiddle">
+                                    <div class="contentTopBarMainCentre"></div>
+                                </div>
+                                <div class="col bg-warning contentTopBarRight"></div>
                             </div>
-                            <div class="col bg-warning contentTopBarRight"></div>
-                        </div>
-                        <div class="col-12 contentWrapper">
-                            <div id="homeMainDiv" class="container-fluid border border-5 border-warning contentMainDiv">
-                                <div id="homeTitleDiv" class="row nopadding">
-                                    <div class="col-12 h-50 bg-light"></div>
-                                    <div class="col-12 h-50 d-flex align-items-center justify-content-center text-center bg-dark">
-                                        <p id="homeTitleText">The main title card</p>
+                            <div class="col-12 contentWrapper">
+                                <div id="homeMainDiv" class="container-fluid border border-5 border-warning contentMainDiv">
+                                    <div id="homeTitleDiv" class="row nopadding">
+                                        <div class="col-12 h-50 bg-light"></div>
+                                        <div class="col-12 h-50 d-flex align-items-center justify-content-center text-center bg-dark">
+                                            <p id="homeTitleText">The main title card</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="homeSubInfo1" class="row nopadding">
-                                    <div class="col-12 h-50 bg-light"></div>
-                                    <div class="col-12 h-50 d-flex align-items-center justify-content-center text-center bg-dark">
-                                        <p id="homeInfoText1">Primary info text</p>
+                                    <div id="homeSubInfo1" class="row nopadding">
+                                        <div class="col-12 h-50 bg-light"></div>
+                                        <div class="col-12 h-50 d-flex align-items-center justify-content-center text-center bg-dark">
+                                            <p id="homeInfoText1">Primary info text</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="homeSubInfo2" class="row nopadding">
-                                    <div class="col-12 h-50 d-flex align-items-center justify-content-center text-center bg-secondary">
-                                        <p id="homeInfoText2">Secondary info text</p>
+                                    <div id="homeSubInfo2" class="row nopadding">
+                                        <div class="col-12 h-50 d-flex align-items-center justify-content-center text-center bg-secondary">
+                                            <p id="homeInfoText2">Secondary info text</p>
+                                        </div>
+                                        <div class="col-12 h-50 bg-light"></div>
                                     </div>
-                                    <div class="col-12 h-50 bg-light"></div>
-                                </div>
-                                <div id="homeExtraInfo" class="row nopadding">
-                                    <div class="col-12 h-50 d-flex align-items-center justify-content-center text-center bg-dark">
-                                        <p id="homeExtraInfoText"><a href="test.html">info text</a></p>
+                                    <div id="homeExtraInfo" class="row nopadding">
+                                        <div class="col-12 h-50 d-flex align-items-center justify-content-center text-center bg-dark">
+                                            <p id="homeExtraInfoText"><a href="test.html">info text</a></p>
+                                        </div>
+                                        <div class="col-12 h-50 bg-light"></div>
                                     </div>
-                                    <div class="col-12 h-50 bg-light"></div>
-                                </div>
-                            </div>                        
-                        </div>
+                                </div>                        
+                            </div>
 
-                        <div class="col-12 contentBottomBar">
-                            <div onclick="" class="d-flex align-items-center justify-content-center text-center text-warning contentBottomButton">
-                                <i style="font-size: 1rem;">@Arjen</i>
+                            <div class="col-12 contentBottomBar">
+                                <div onclick="" class="d-flex align-items-center justify-content-center text-center contentBottomButton">
+                                    <i style="font-size: 1rem;">@Arjen</i>
+                                </div>
                             </div>
                         </div>
 
@@ -564,15 +575,19 @@
                             </div>
                         </div>
                     </div>  
+                </div>
 
-                    <div id="headerNavBar" class="col-12 row nopadding">
-                        <div id="headerNavBarLeft" class="col"></div>
-                        <div id="headerNavBarMiddle" class="col-4 nopadding">
-                            <div id="headerNavBarMainCentre"></div>
-                        </div>
-                        <div id="headerNavBarRight" class="col"></div>
+                <!-- Fixed top nav bar -->
+                <div id="headerNavBar" class="col-12 row nopadding">
+                    <div id="headerNavBarLeft" class="col d-flex align-items-center justify-content-start text-center bg-info">
+                        <h2>Left</h2>
                     </div>
-
+                    <div id="headerNavBarMiddle" class="col-4 nopadding">
+                        <div id="headerNavBarMainCentre"></div>
+                    </div>
+                    <div id="headerNavBarRight" class="col d-flex align-items-center justify-content-end text-center bg-info">
+                        <h2>Right</h2>
+                    </div>
                 </div>
 
                 <!-- Page navigation rocket -->
@@ -591,6 +606,9 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Page parralax background -->
+                <div class="col-12" id="parralaxBackground"></div>
             </div>
         </div>  
         <div id="centreObject"></div>     
