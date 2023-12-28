@@ -141,7 +141,14 @@ function goToNavPage(pageID)
 
 async function scrollToNextPage()
 {
-    if(!canTransition || currentBlockID == 1) return;
+    if(!canTransition) return;
+    if(currentBlockID == 1)
+    {
+        //Do custom stuff if at end of scroll(?)
+        console.log("END OF WEBSITE");
+        return;
+    }
+
     canTransition = false;
 
     var scrollSpeed = 40;
@@ -188,7 +195,7 @@ async function scrollToNextPage()
 
 function setProjectCards()
 {
-    if(currentBlockID != 2 || hasSelectedCard) return;
+    // if(currentBlockID != 2 || hasSelectedCard) return;
 
     var cardsContainer = document.getElementById('projectsCardsDiv');
     var projectCards = [];

@@ -112,18 +112,25 @@ body::-webkit-scrollbar {
   height: 75%;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
 }
+
 .contentTopBarMiddle {
-  /* background-color: yellow; */
   width: 80px;
   height: 100%;
 }
 .contentTopBarMainCentre {
-  /* background-color: orangered; */
   width: 40%;
   height: 90%;
   margin-top: 4%;
   margin-left: auto;
   margin-right: auto;
+}
+.topNavLogo{
+  height: 75%;
+}
+.topBarPulse
+{
+  background-color: grey;
+  animation: rocketPulseHome 3s infinite;
 }
 
 
@@ -139,7 +146,7 @@ body::-webkit-scrollbar {
   margin-right: auto;
   font-size: 5rem;
   transform: translate(0px, -5px);
-  color: darkmagenta;
+  color: white;
 }
 .contentBottomButton:hover {
   cursor: pointer;
@@ -160,8 +167,7 @@ body::-webkit-scrollbar {
   width: 14px;
   height: 28px;
   position: absolute;
-  background-color: darkmagenta;
-  /* background-image: url(Images/rocket1.png); */
+  background-image: url(Images/rocketPlaceholder.png);
   background-size: cover;
   transform: translate(-50%, -50%);
   top: 87.5%;
@@ -173,8 +179,7 @@ body::-webkit-scrollbar {
 #contentRocket {
   width: 30px;
   height: 60px;
-  background-color: darkmagenta;
-  /* background-image: url(Images/rocket1.png); */
+  background-image: url(Images/rocketPlaceholder.png);
   background-size: cover;
   position: fixed;
   left: 0%;
@@ -198,8 +203,8 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 4%);
-  width: 75%;
+  transform: translate(-50%, 15%);
+  width: 350px;
   border-radius: 50%;
 }
 #homePageBackgroundMain{
@@ -216,6 +221,7 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
+
 /* Animations */
 @keyframes rocketOut {
   0% {top: 0.5%;}
@@ -228,4 +234,10 @@ body::-webkit-scrollbar {
   0% {top: 45%;}
   50% {top: -5%;}
   100% {top: 0.5%;}
+}
+
+@keyframes rocketPulseHome {
+  0% { opacity: 0.8; }
+  50% { opacity: 0.0; }
+  100% { opacity: 0.8; }
 }

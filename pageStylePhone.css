@@ -20,13 +20,16 @@
     #contactRightDiv{
         height: 20%;
     }
+    #contactMessageInput{
+        height: 50px;
+    }
 }
 @media only screen and (min-width: 270px) {
     #aboutLeftInfoDiv p{
         font-size: 0.7rem;
     }
     #aboutPicture{
-        width: 140px;
+        width: 35%;
     }
 
     .projectCard{
@@ -42,6 +45,9 @@
     }
     #contactRightDiv{
         height: 40%;
+    }
+    #contactMessageInput{
+        height: 75px;
     }
 }
 @media only screen and (min-width: 480px) {
@@ -65,6 +71,9 @@
     #contactRightDiv{
         height: 40%;
     }
+    #contactMessageInput{
+        height: 75px;
+    }
 }
 @media only screen and (min-width: 768px) {
     #aboutLeftInfoDiv p{
@@ -86,6 +95,9 @@
     }
     #contactRightDiv{
         height: 100%;
+    }
+    #contactMessageInput{
+        height: 350px;
     }
 }
 @media only screen and (min-width: 1250px) {
@@ -109,5 +121,8 @@
     }
     #contactRightDiv{
         height: 100%;
+    }
+    #contactMessageInput{
+        height: 350px;
     }
 }
