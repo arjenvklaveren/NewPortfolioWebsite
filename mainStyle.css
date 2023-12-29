@@ -1,3 +1,9 @@
+/* Variables */
+:root{
+  --border-angle: 5%;
+  --border-size: 5px;
+}
+
 html {
   scroll-behavior: auto !important;
   padding: 0;
@@ -45,8 +51,26 @@ body::-webkit-scrollbar {
   z-index: 2;
 }
 
+/* Content wrapper */
+.contentWrapper {
+  /* background-color: rgba(0,0,0,0) !important; */
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  height: 85%;
+  z-index: 2;
+  clip-path: polygon(var(--border-angle) 0%, calc(100% - var(--border-angle)) 0%, 100% var(--border-angle), 100% calc(100% - var(--border-angle)),
+  calc(100% - var(--border-angle)) 100%, var(--border-angle) 100%, 0% calc(100% - var(--border-angle)), 0% var(--border-angle));
+
+  padding: var(--border-size);
+}
 .contentMainDiv{
-  /* display: none !important; */
+  display: none !important;
+
+  clip-path: polygon(var(--border-angle) 0%, calc(100% - var(--border-angle)) 0%, 100% var(--border-angle), 100% calc(100% - var(--border-angle)),
+  calc(100% - var(--border-angle)) 100%, var(--border-angle) 100%, 0% calc(100% - var(--border-angle)), 0% var(--border-angle));
+  
 }
 
 .transitionBlock {
@@ -56,47 +80,48 @@ body::-webkit-scrollbar {
 
 /* Navigation bar */
 #sideNavBar {
-  width: 30px;
+  width: 35px;
   z-index: 2;
+  outline: none;
 }
-#sideNavBarDiv
-{
-  
+#sideNavBarDiv {
+  background-color: rgba(33,37,41,0.75);
 }
 .navItem {
   text-decoration: none;
 }
 .navItem:hover {
-  background-color: grey !important;
+  background-color: rgba(58, 63, 67, 0.75) !important;
   cursor: pointer;
 }
-
-/*Header nav bar */
-#headerNavBar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 10%;
+.navItemPlanet {
+  width: 125%;
+  padding: 0;
+  margin: 0;
   z-index: 2;
 }
-#headerNavBarLeft{
+#navPlanetLine {
+  position: absolute;
+  background: linear-gradient(to bottom, rgb(13,110,253), rgb(25,135,84), rgb(220,53,69), rgb(255,193,7));
   height: 75%;
-  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+  width: 2px !important;
+  transform: translate(-1px, 0px);
+  display: block;
+  padding: 0;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  top: 12.5%;
 }
-#headerNavBarRight{
-  height: 75%;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
-}
-#headerNavBarMiddle{
-  width: 80px;
-  height: 100%;
-}
-#headerNavBarMainCentre{
-  width: 40%;
-  height: 90%;
-  margin-top: 4%;
-  margin-left: auto;
-  margin-right: auto;
+.navPlanetSubLine {
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  transform: translate(-7.5px, 0px);
+  padding: 0;
+  margin: 0;
+  left: 50%;
+  right: 50%;
 }
 
 /* Content top bar */
@@ -106,13 +131,16 @@ body::-webkit-scrollbar {
 }
 .contentTopBarLeft {
   height: 75%;
+  width: 100%;
+  padding: 0;
   clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
 }
 .contentTopBarRight {
   height: 75%;
+  width: 100%;
+  padding: 0;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
 }
-
 .contentTopBarMiddle {
   width: 80px;
   height: 100%;
@@ -126,9 +154,12 @@ body::-webkit-scrollbar {
 }
 .topNavLogo{
   height: 75%;
+  margin-left: 5%;
 }
-.topBarPulse
-{
+.topNavText{
+  margin-right: 5% !important;
+}
+.topBarPulse{
   background-color: grey;
   animation: rocketPulseHome 3s infinite;
 }
@@ -153,19 +184,10 @@ body::-webkit-scrollbar {
 }
 
 
-/* Content wrapper */
-.contentWrapper {
-  margin-left: auto;
-  margin-right: auto;
-  width: 95%;
-  height: 85%;
-  z-index: 2;
-}
-
 /* Rockets */
 #navRocket {
-  width: 14px;
-  height: 28px;
+  width: 18px;
+  height: 36px;
   position: absolute;
   background-image: url(Images/rocketPlaceholder.png);
   background-size: cover;
@@ -175,6 +197,7 @@ body::-webkit-scrollbar {
   margin-left: auto;
   margin-right: auto;
   padding: 0;
+  z-index: 4;
 }
 #contentRocket {
   width: 30px;
@@ -191,13 +214,39 @@ body::-webkit-scrollbar {
 }
 
 
+/*Header nav bar fixed */
+#headerNavBar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10%;
+  z-index: 2;
+}
+#headerNavBarLeft{
+  height: 75%;
+}
+#headerNavBarRight{
+  height: 75%;
+}
+#headerNavBarMiddle{
+  width: 80px;
+  height: 100%;
+}
+#headerNavBarMainCentre{
+  width: 40%;
+  height: 90%;
+  margin-top: 4%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /* Visuals */
-.pageBackground
-{
+.pageBackground{
   position: absolute;
   width: 100%;
   z-index: 1;
-  /* display: none; */
+  display: none;
 }
 .planetVisual{
   position: absolute;
@@ -214,8 +263,7 @@ body::-webkit-scrollbar {
   overflow-y: hidden;
 }
 
-#parralaxBackground
-{
+#parralaxBackground{
   position: fixed;
   z-index: 1;
   height: 100%;
