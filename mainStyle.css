@@ -53,7 +53,6 @@ body::-webkit-scrollbar {
 
 /* Content wrapper */
 .contentWrapper {
-  position: relative;
   margin-left: auto;
   margin-right: auto;
   width: 95%;
@@ -119,6 +118,57 @@ body::-webkit-scrollbar {
   margin: 0;
   left: 50%;
   right: 50%;
+}
+
+#navPlanetTopLine{
+  position: absolute;
+  background-color:rgb(13,110,253);
+  height:  calc(16.65% - 5px);
+  width: 2px !important;
+  transform: translate(-1px, 0px);
+  display: block;
+  padding: 0;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  top: calc(-16.65% + 5px);
+}
+#navPlanetTopSubLine{
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  transform: translate(-12.5px, 0px);
+  background-color:rgb(13,110,253);
+  padding: 0;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  top: calc(-16.65% + 5px);
+}
+#navPlanetBottomLine{
+  position: absolute;
+  background-color:rgb(255,193,7);
+  height: calc(16.65% - 5px);
+  width: 2px !important;
+  transform: translate(-1px, 0px);
+  display: block;
+  padding: 0;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  bottom: calc(-16.65% + 5px);
+}
+#navPlanetBottomSubLine{
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  transform: translate(-12.5px, 0px);
+  background-color:rgb(255,193,7);
+  padding: 0;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  bottom: calc(-16.65% + 5px);
 }
 
 /* Content top bar */
