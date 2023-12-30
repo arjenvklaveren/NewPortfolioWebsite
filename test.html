@@ -3,31 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gradient Border Example</title>
   <style>
-    /* Styles for the container div */
-    .container {
-      width: 500px;
-      height: 500px;
-      background-color: blue;
-      position: relative;
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0; /* Set a background color for the body */
     }
 
-    /* Styles for the gradient border */
-    .container::before {
-      content: "";
+    .container {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      overflow: hidden; /* Ensure the red div doesn't overflow */
+    }
+
+    .inner {
       position: absolute;
-      top: -50px;
-      left: -50px;
-      right: -50px;
-      bottom: -50px;
-      border: 50px solid;
-      border-image: linear-gradient(to bottom right, blue, red);
-      border-image-slice: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background-color: red;
+      z-index: 2; /* Ensure the red div is on top of the pseudo-element */
     }
   </style>
 </head>
 <body>
-  <div class="container"></div>
+
+<div class="container">
+  <div class="inner"></div>
+  <svg class="clip-svg" width="0" height="0">
+    <defs>
+      <clipPath id="clip-circle" clipPathUnits="objectBoundingBox">
+        <circle cx="0.5" cy="0.5" r="0.5" />
+      </clipPath>
+    </defs>
+  </svg>
+</div>
+
 </body>
 </html>
