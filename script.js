@@ -32,6 +32,7 @@ window.onresize = function()
     setHeightValues();
     onExitProjectCard();
     currentProjectCardsPage = 1;
+    if(parralaxBG != null) parralaxBG.resetVisuals();
 }
 window.onbeforeunload = function () 
 {
@@ -162,8 +163,6 @@ async function scrollToNextPage()
     contentRocket.style.animation = "rocketOut " + transitionTime + "s";
     contentRocket.style.animationFillMode = "forwards";
 
-    document.getElementById('homePageBackgroundMain').setAttribute('style', 'overflow-y: visible !important');
-
     var currentFade = contentPages[currentBlockID - 1].getElementsByClassName('contentPageWrapper');
     var nextFade = contentPages[currentBlockID - 2].getElementsByClassName('contentPageWrapper');
 
@@ -187,15 +186,13 @@ async function scrollToNextPage()
     $(currentFade).css('opacity', 1.0);
     $(nextFade).animate({opacity: 1.0}, 500, 'linear');
 
-    document.getElementById('homePageBackgroundMain').setAttribute('style', 'overflow-y: hidden !important');
-
     await new Promise(resolve => setTimeout(resolve, 1000));
     canTransition = true;
 }
 
 function setProjectCards()
 {
-    // if(currentBlockID != 2 || hasSelectedCard) return;
+     if(hasSelectedCard) return;
 
     var cardsContainer = document.getElementById('projectsCardsDiv');
     var projectCards = [];
@@ -205,8 +202,8 @@ function setProjectCards()
 
     //get height and width values of box and cards
     projectCards[0].style.display = "block";
-    var cardHeight = projectCards[0].getBoundingClientRect().height;
-    var cardWidth = outerWidth(projectCards[0]);
+    var cardHeight = $(projectCards[0]).outerHeight(true);
+    var cardWidth = $(projectCards[0]).outerWidth(true);
     var containerBox = cardsContainer.getBoundingClientRect();
     projectCards[0].style.display = "none";
 
@@ -289,7 +286,7 @@ class ParralaxBackground
 
     #container = document.getElementById('parralaxBackground');
 
-    #startImgCount = 50;
+    #startImgCount = 5 + (window.innerWidth / 50);
 
     #randSeed = "Parralax";
     #random = new Math.seedrandom(this.#randSeed);
@@ -301,6 +298,7 @@ class ParralaxBackground
 
     #fillFullArea()
     {
+        console.log(this.#startImgCount);
         for(var i = 0; i < this.#startImgCount; i++)
         {
             this.createNewVisual();
@@ -357,21 +355,21 @@ class ParralaxBackground
         this.#imageVisuals.push(image);
     }
 
+    resetVisuals()
+    {
+        this.#startImgCount = 10 + (window.innerWidth / 50);
+        this.destroyVisuals();
+        this.#fillFullArea();
+    }
+
     destroyVisuals()
     {
         for(var i = 0; i < this.#imageVisuals.length; i++)
         {
             this.#imageVisuals[i].remove();
         }
+        this.#imageVisuals = [];
     }
-}
-
-function outerWidth(el) {
-    var width = el.offsetWidth;
-    var style = getComputedStyle(el);
-  
-    width += parseInt(style.marginLeft) + parseInt(style.marginRight);
-    return width + 1;
 }
 
 function isMobileDevice() {

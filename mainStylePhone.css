@@ -1,120 +1,141 @@
-@media only screen and (min-width: 0px) {
-    .contentTopBar
-    {
+@media only screen and (min-width: 270px) {
+    .contentTopBar {
         height: 10%;
     }
-    .contentTopBarMiddle
-    {
-       width: 40px;
-    }
-    .contentBottomBar{
-        height: 3%;
-    }
-    .contentWrapper{
-        /* width: 85%; */
-        height: 87%;
-    }
-    .contentBottomButton
-    {
+    .contentTopBarMiddle {
         width: 50px;
     }
-    .contentTopBarMainCentre{
-        width: 80%;
-    }
-}
-@media only screen and (min-width: 270px) {
-    .contentTopBar
-    {
-        height: 10%;
-    }
-    .contentTopBarMiddle
-    {
-       width: 50px;
-    }
-    .contentBottomBar{
+    .contentBottomBar {
         height: 3.5%;
     }
-    .contentWrapper{
+    .contentWrapper {
         /* width: 87.5%; */
         height: 86.5%;
     }
-    .contentBottomButton
-    {
+    .contentBottomButton {
         width: 75px;
     }
-    .contentTopBarMainCentre{
+    .contentTopBarMainCentre {
         width: 70%;
     }
+
+    .topNavLogo {
+        margin-left: auto;
+        margin-right: auto;
+        height: 50%;
+    }
+    .topNavText {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.2rem;
+    }
+
+    .planetVisual {
+        width: 260px;
+        transform: translate(-50%, 21%);
+    }
 }
+
 @media only screen and (min-width: 480px) {
-    .contentTopBar
-    {
+    .contentTopBar {
         height: 10%;
     }
-    .contentTopBarMiddle
-    {
-       width: 60px;
+    .contentTopBarMiddle {
+        width: 60px;
     }
-    .contentBottomBar{
+    .contentBottomBar {
         height: 4%;
     }
-    .contentWrapper{
+    .contentWrapper {
         /* width: 90%; */
         height: 86%;
     }
-    .contentBottomButton
-    {
+    .contentBottomButton {
         width: 100px;
     }
-    .contentTopBarMainCentre{
+    .contentTopBarMainCentre {
         width: 60%;
     }
+
+    .topNavLogo {
+        margin-left: 5%;
+        height: 75%;
+    }
+    .topNavText {
+        margin-right: 5%;
+        font-size: 1.75rem;
+    }
+
+    .planetVisual {
+        width: 290px;
+        transform: translate(-50%, 19%);
+    }
 }
+
 @media only screen and (min-width: 768px) {
-    .contentTopBar
-    {
+    .contentTopBar {
         height: 10%;
     }
-    .contentTopBarMiddle
-    {
-       width: 70px;
+    .contentTopBarMiddle {
+        width: 70px;
     }
-    .contentBottomBar{
+    .contentBottomBar {
         height: 4.5%;
     }
-    .contentWrapper{
+    .contentWrapper {
         /* width: 92.5%; */
         height: 85.5%;
     }
-    .contentBottomButton
-    {
+    .contentBottomButton {
         width: 125px;
     }
-    .contentTopBarMainCentre{
+    .contentTopBarMainCentre {
         width: 50%;
     }
+
+    .topNavLogo {
+        margin-left: 5%;
+    }
+    .topNavText {
+        margin-right: 5%;
+    }
+    
+    .planetVisual {
+        width: 320px;
+        transform: translate(-50%, 17%);
+    }
 }
+
 @media only screen and (min-width: 1250px) {
-    .contentTopBar
-    {
+    .contentTopBar {
         height: 10%;
     }
-    .contentTopBarMiddle
-    {
-       width: 80px;
+    .contentTopBarMiddle {
+        width: 80px;
     }
-    .contentBottomBar{
+    .contentBottomBar {
         height: 5%;
     }
-    .contentWrapper{
+    .contentWrapper {
         /* width: 95%; */
         height: 85%;
     }
-    .contentBottomButton
-    {
+    .contentBottomButton {
         width: 150px;
     }
-    .contentTopBarMainCentre{
+    .contentTopBarMainCentre {
         width: 40%;
+    }
+
+    .topNavLogo {
+        margin-left: 5%;
+    }
+    .topNavText {
+        margin-right: 5%;
+    }
+
+    .planetVisual {
+        width: 350px;
+        transform: translate(-50%, 15%);
     }
 }

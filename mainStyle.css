@@ -1,7 +1,13 @@
 /* Variables */
-:root{
+:root {
   --border-angle: 5%;
   --border-size: 5px;
+}
+
+/* Fonts */
+@font-face {
+  font-family: mainFont;
+  src: url(Fonts/zekton.otf);
 }
 
 html {
@@ -13,11 +19,12 @@ html {
 }
 
 body {
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
   padding: 0;
   margin: 0;
   height: 100%;
-  background-color: black
+  background-color: black;
+  font-family: mainFont;
 }
 
 body::-webkit-scrollbar {
@@ -29,24 +36,24 @@ body::-webkit-scrollbar {
   margin: 0 !important;
 }
 
-#containerMain{
+#containerMain {
   height: 100%;
 }
-#rowMain{
-  height: 100%;
-}
-#mainContent{
+#rowMain {
   height: 100%;
 }
 
+#mainContent {
+  height: 100%;
+}
 .contentPage {
-  display:flex;
+  display: flex;
   max-width: 100%;
   height: 100%;
   position: relative;
   z-index: 2;
 }
-.contentPageWrapper{
+.contentPageWrapper {
   height: 100%;
   z-index: 2;
 }
@@ -59,16 +66,15 @@ body::-webkit-scrollbar {
   height: 85%;
   z-index: 2;
   clip-path: polygon(var(--border-angle) 0%, calc(100% - var(--border-angle)) 0%, 100% var(--border-angle), 100% calc(100% - var(--border-angle)),
-  calc(100% - var(--border-angle)) 100%, var(--border-angle) 100%, 0% calc(100% - var(--border-angle)), 0% var(--border-angle));
+      calc(100% - var(--border-angle)) 100%, var(--border-angle) 100%, 0% calc(100% - var(--border-angle)), 0% var(--border-angle));
   opacity: 0.95;
   padding: var(--border-size);
 }
-.contentMainDiv{
-  background-color: rgba(33,37,41,1);
+.contentMainDiv {
+  background-color: rgba(33, 37, 41, 1);
   clip-path: polygon(var(--border-angle) 0%, calc(100% - var(--border-angle)) 0%, 100% var(--border-angle), 100% calc(100% - var(--border-angle)),
-  calc(100% - var(--border-angle)) 100%, var(--border-angle) 100%, 0% calc(100% - var(--border-angle)), 0% var(--border-angle)); 
+      calc(100% - var(--border-angle)) 100%, var(--border-angle) 100%, 0% calc(100% - var(--border-angle)), 0% var(--border-angle));
 }
-
 .transitionBlock {
   background-color: black;
 }
@@ -81,7 +87,7 @@ body::-webkit-scrollbar {
   outline: none;
 }
 #sideNavBarDiv {
-  background-color: rgba(33,37,41,0.75);
+  background-color: rgba(33, 37, 41, 0.75);
 }
 .navItem {
   text-decoration: none;
@@ -98,7 +104,7 @@ body::-webkit-scrollbar {
 }
 #navPlanetLine {
   position: absolute;
-  background: linear-gradient(to bottom, rgb(13,110,253), rgb(25,135,84), rgb(220,53,69), rgb(255,193,7));
+  background: linear-gradient(to bottom, rgb(13, 110, 253), rgb(25, 135, 84), rgb(220, 53, 69), rgb(255, 193, 7));
   height: 75%;
   width: 2px !important;
   transform: translate(-1px, 0px);
@@ -119,11 +125,10 @@ body::-webkit-scrollbar {
   left: 50%;
   right: 50%;
 }
-
-#navPlanetTopLine{
+#navPlanetTopLine {
   position: absolute;
-  background-color:rgb(13,110,253);
-  height:  calc(16.65% - 5px);
+  background-color: rgb(13, 110, 253);
+  height: calc(16.65% - 5px);
   width: 2px !important;
   transform: translate(-1px, 0px);
   display: block;
@@ -133,21 +138,21 @@ body::-webkit-scrollbar {
   right: 50%;
   top: calc(-16.65% + 5px);
 }
-#navPlanetTopSubLine{
+#navPlanetTopSubLine {
   position: absolute;
   height: 3px;
   width: 25px;
   transform: translate(-12.5px, 0px);
-  background-color:rgb(13,110,253);
+  background-color: rgb(13, 110, 253);
   padding: 0;
   margin: 0;
   left: 50%;
   right: 50%;
   top: calc(-16.65% + 5px);
 }
-#navPlanetBottomLine{
+#navPlanetBottomLine {
   position: absolute;
-  background-color:rgb(255,193,7);
+  background-color: rgb(255, 193, 7);
   height: calc(16.65% - 5px);
   width: 2px !important;
   transform: translate(-1px, 0px);
@@ -158,12 +163,12 @@ body::-webkit-scrollbar {
   right: 50%;
   bottom: calc(-16.65% + 5px);
 }
-#navPlanetBottomSubLine{
+#navPlanetBottomSubLine {
   position: absolute;
   height: 3px;
   width: 25px;
   transform: translate(-12.5px, 0px);
-  background-color:rgb(255,193,7);
+  background-color: rgb(255, 193, 7);
   padding: 0;
   margin: 0;
   left: 50%;
@@ -199,14 +204,17 @@ body::-webkit-scrollbar {
   margin-left: auto;
   margin-right: auto;
 }
-.topNavLogo{
+.topNavLogo {
   height: 75%;
   margin-left: 5%;
 }
-.topNavText{
-  margin-right: 5% !important;
+.topNavText {
+  margin-right: 5%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 1.75rem;
 }
-.topBarPulse{
+.topBarPulse {
   background-color: rgba(58, 63, 67, 1.0);
   animation: rocketPulseHome 3s infinite;
 }
@@ -256,30 +264,30 @@ body::-webkit-scrollbar {
   top: 0%;
   z-index: 3;
 }
-#contentRocket:hover{
+#contentRocket:hover {
   cursor: pointer;
 }
 
 
 /*Header nav bar fixed */
-#headerNavBar{
+#headerNavBar {
   position: fixed;
   top: 0;
   left: 0;
   height: 10%;
   z-index: 2;
 }
-#headerNavBarLeft{
+#headerNavBarLeft {
   height: 75%;
 }
-#headerNavBarRight{
+#headerNavBarRight {
   height: 75%;
 }
-#headerNavBarMiddle{
+#headerNavBarMiddle {
   width: 80px;
   height: 100%;
 }
-#headerNavBarMainCentre{
+#headerNavBarMainCentre {
   width: 40%;
   height: 90%;
   margin-top: 4%;
@@ -289,13 +297,13 @@ body::-webkit-scrollbar {
 
 
 /* Visuals */
-.pageBackground{
+.pageBackground {
   position: absolute;
   width: 100%;
   z-index: 1;
   /* display: none; */
 }
-.planetVisual{
+.planetVisual {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -303,36 +311,48 @@ body::-webkit-scrollbar {
   width: 350px;
   border-radius: 50%;
 }
-#homePageBackgroundMain{
-  position: absolute;
-  width: 100%;
-  height: 100vh; 
-  overflow-y: hidden;
-}
-
-#parralaxBackground{
+#parralaxBackground {
   position: fixed;
   z-index: 1;
   height: 100%;
+  width: 100%;
 }
 
 
 /* Animations */
 @keyframes rocketOut {
-  0% {top: 0.5%;}
-  30% {top: -20%;}
-  95% {top: 45%;}
-  100% {top: 45%;
+  0% {
+    top: 0.5%;
+  }
+  30% {
+    top: -20%;
+  }
+  95% {
+    top: 45%;
+  }
+  100% {
+    top: 45%;
   }
 }
 @keyframes rocketIn {
-  0% {top: 45%;}
-  50% {top: -5%;}
-  100% {top: 0.5%;}
+  0% {
+    top: 45%;
+  }
+  50% {
+    top: -5%;
+  }
+  100% {
+    top: 0.5%;
+  }
 }
-
 @keyframes rocketPulseHome {
-  0% { opacity: 0.8; }
-  50% { opacity: 0.0; }
-  100% { opacity: 0.8; }
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
