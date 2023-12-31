@@ -21,15 +21,16 @@ window.onload = function()
 {
     generateTransitionBlocks();
     setHeightValues();
-    scrollToBottom();
-
+    
     parralaxBG = new ParralaxBackground();
-
+    
     setInterval(update, 10);
+    scrollToBottom();
 };
 window.onresize = function()
 {
     setHeightValues();
+    scrollToBottom();
     onExitProjectCard();
     currentProjectCardsPage = 1;
     if(parralaxBG != null) parralaxBG.resetVisuals();
@@ -298,7 +299,6 @@ class ParralaxBackground
 
     #fillFullArea()
     {
-        console.log(this.#startImgCount);
         for(var i = 0; i < this.#startImgCount; i++)
         {
             this.createNewVisual();
