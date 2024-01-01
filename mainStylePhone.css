@@ -16,7 +16,12 @@
         width: 75px;
     }
     .contentTopBarMainCentre {
-        width: 70%;
+        width: 80%;
+        margin-top: 10%;
+    }
+
+    #headerNavBarMainCentre {
+        margin-top: 10%;
     }
 
     .topNavLogo {
@@ -54,7 +59,12 @@
         width: 100px;
     }
     .contentTopBarMainCentre {
-        width: 60%;
+        width: 70%;
+        margin-top: 8%;
+    }
+
+    #headerNavBarMainCentre {
+        margin-top: 8%;
     }
 
     .topNavLogo {
@@ -90,7 +100,12 @@
         width: 125px;
     }
     .contentTopBarMainCentre {
-        width: 50%;
+        width: 60%;
+        margin-top: 6%;
+    }
+
+    #headerNavBarMainCentre {
+        margin-top: 6%;
     }
 
     .topNavLogo {
@@ -124,7 +139,12 @@
         width: 150px;
     }
     .contentTopBarMainCentre {
-        width: 40%;
+        width: 60%;
+        margin-top: 4%;
+    }
+
+    #headerNavBarMainCentre {
+        margin-top: 4%;
     }
 
     .topNavLogo {

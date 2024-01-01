@@ -27,6 +27,10 @@
         max-height: 50%;
         border-top: 4px solid rgb(25, 135, 84);
     }
+    .projectCardContentHeaderText {
+        width: 50%;
+        font-size: 1rem;
+    }
 
     .contactLinkDiv {
         width: 80%;
@@ -74,6 +78,10 @@
     .projectCardContentRight {
         max-height: 50%;
         border-top: 4px solid rgb(25, 135, 84);
+    }
+    .projectCardContentHeaderText {
+        width: 60%;
+        font-size: 1.25rem;
     }
 
     .contactLinkDiv {
@@ -123,6 +131,10 @@
         max-height: 100%;
         border-top: 0px solid rgb(25, 135, 84);
     }
+    .projectCardContentHeaderText {
+        width: 70%;
+        font-size: 1.5rem;
+    }
 
     .contactLinkDiv {
         width: 75%;
@@ -170,6 +182,10 @@
     .projectCardContentRight {
         max-height: 100%;
         border-top: 0px solid rgb(25, 135, 84);
+    }
+    .projectCardContentHeaderText {
+        width: 80%;
+        font-size: 2rem;
     }
 
     .contactLinkDiv {

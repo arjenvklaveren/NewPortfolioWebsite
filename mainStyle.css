@@ -176,7 +176,7 @@ body::-webkit-scrollbar {
   bottom: calc(-16.65% + 5px);
 }
 
-/* Content top bar */
+/* Content top bar pages */
 .contentTopBar {
   height: 10%;
   z-index: 2;
@@ -198,7 +198,7 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 .contentTopBarMainCentre {
-  width: 40%;
+  width: 80%;
   height: 90%;
   margin-top: 4%;
   margin-left: auto;
@@ -215,8 +215,8 @@ body::-webkit-scrollbar {
   font-size: 1.75rem;
 }
 .topBarPulse {
-  background-color: rgba(58, 63, 67, 1.0);
-  animation: rocketPulseHome 3s infinite;
+  /* background-color: rgba(58, 63, 67, 1.0); */
+  /* animation: rocketPulseHome 3s infinite; */
 }
 
 
@@ -244,8 +244,9 @@ body::-webkit-scrollbar {
   width: 18px;
   height: 36px;
   position: absolute;
-  background-image: url(Images/rocketPlaceholder.png);
-  background-size: cover;
+  background-image: url(Images/rocket2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
   transform: translate(-50%, -50%);
   top: 87.5%;
   left: 50%;
@@ -257,14 +258,17 @@ body::-webkit-scrollbar {
 #contentRocket {
   width: 30px;
   height: 60px;
-  background-image: url(Images/rocketPlaceholder.png);
-  background-size: cover;
+  background-image: url(Images/rocket2.png), url(Images/rocket2shadow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   position: fixed;
   left: 0%;
   top: 0%;
   margin-left: auto;
   margin-right: auto;
   z-index: 3;
+  filter: drop-shadow(0px 0px 10px white);
 }
 #contentRocket:hover {
   cursor: pointer;
@@ -290,9 +294,9 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 #headerNavBarMainCentre {
-  width: 40%;
+  width: 80%;
   height: 90%;
-  margin-top: 4%;
+  margin-top: 8%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -349,12 +353,12 @@ body::-webkit-scrollbar {
 }
 @keyframes rocketPulseHome {
   0% {
-    opacity: 0.8;
+    opacity: 0.6;
   }
   50% {
     opacity: 0.0;
   }
   100% {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
