@@ -20,25 +20,26 @@ var hasSelectedCard;
 window.onload = function() 
 {
     generateTransitionBlocks();
+    scrollToBottom();
     setHeightValues();
     
     parralaxBG = new ParralaxBackground();
     
     setInterval(update, 10);
-    scrollToBottom();
     typeWriterHome();
+    scrollToBottom();
 };
 window.onresize = function()
 {
     setHeightValues();
-    scrollToBottom();
     onExitProjectCard();
     currentProjectCardsPage = 1;
     if(parralaxBG != null) parralaxBG.resetVisuals();
+    // scrollToBottom();
 }
 window.onbeforeunload = function () 
 {
-    window.scrollTo(0, 999999);
+    scrollToBottom();
 };
 
 function setHeightValues()
@@ -54,14 +55,7 @@ function setHeightValues()
 
 function scrollToBottom()
 {
-    var bottomElement = document.body;
-    bottomElement.scrollIntoView({
-        behavior: 'auto', 
-        block: 'end',
-        inline: 'nearest'
-    });
-    
-    window.scrollTo(0, 99999);
+    window.scrollTo(0, 999999);
 }
 
 function generateTransitionBlocks()
@@ -69,7 +63,7 @@ function generateTransitionBlocks()
     //set random height of transition blocks
     var blocks = document.getElementsByClassName("transitionBlock");
     for (var i = 0; i < blocks.length; i++) {
-        var randomHeight = Math.floor(Math.random() * (8000 - 4000 + 1)) + 4000;
+        var randomHeight = Math.floor(Math.random() * (12000 - 4000 + 1)) + 4000;
         blocks[i].style.height = randomHeight + "px";
         transitionBlocks[i] = blocks[i];
     }
@@ -97,8 +91,8 @@ function typeWriterHome()
     {
         texts[i] = allElements[i].textContent;
         allElements[i].innerHTML = "";
-        allElements[i].style.borderRight = "solid white 3px";
-        allElements[i].style.animation = "blinkCaret 0.75s infinite";
+        allElements[i].style.borderRight = "solid white 4px";
+        allElements[i].style.animation = "blinkCaret 1s infinite";
     }
     
     let paragraphIndex = 0;
@@ -107,7 +101,7 @@ function typeWriterHome()
     function type() {
         const element = allElements[paragraphIndex];
         const currentText = texts[paragraphIndex]; 
-        element.innerHTML = currentText.slice(0, charIndex);
+        element.innerHTML = currentText.slice(0, charIndex) + "&nbsp;";
 
         charIndex++;
 
@@ -178,9 +172,11 @@ function setContentRocket()
 
 function goToNavPage(pageID)
 {
+    if(pageID == currentBlockID - 1) return;
     if(canTransition) window.scrollTo(0, pagesHeights[pageID] + 1);
     if(pageID != 0) document.getElementById("contentRocket").style.animation = "rocketClickAble 4s infinite";
     else document.getElementById("contentRocket").style.animation = "none";
+    parralaxBG.resetVisuals();
 }
 
 async function scrollToNextPage()
@@ -279,10 +275,16 @@ function setProjectCards()
 function projectsNextPage()
 {
     if(currentProjectCardsPage < maxProjectCardsPage) currentProjectCardsPage++;
+
+    document.getElementsByClassName('cardPageArrow')[0].style.opacity = 1;
+    if(currentProjectCardsPage == maxProjectCardsPage) document.getElementsByClassName('cardPageArrow')[1].style.opacity = 0;
 }
 function projectsPreviousPage()
 {
     if(currentProjectCardsPage > 1) currentProjectCardsPage--;
+
+    document.getElementsByClassName('cardPageArrow')[1].style.opacity = 1;
+    if(currentProjectCardsPage == 1) document.getElementsByClassName('cardPageArrow')[0].style.opacity = 0;
 }
 
 function onClickProjectCard(cardContentID)
@@ -314,12 +316,27 @@ function onExitProjectCard()
     hasSelectedCard = false;
 }
 
+function blockLandscape()
+{
+    if(isMobileDevice() == true)
+    {
+        if(screen.availHeight < screen.availWidth){
+            alert("Landscape mode under construction. Please rotate your device into portrait mode");
+        }
+    }
+    else if(screen.availHeight < 500)
+    {
+        alert("Small window height compatibility under construction. Please resize your window");
+    }
+}
+
 function update()
 {
     setNavRocket();
     setContentRocket();
     setProjectCards();
     setContentPageHeight();
+    blockLandscape();
 }
 
 class ParralaxBackground
@@ -329,6 +346,7 @@ class ParralaxBackground
     #imageArray = ['image1.png', 'image2.png', 'image3.png'];
 
     #container = document.getElementById('parralaxBackground');
+    #blockRect = this.#container.getBoundingClientRect();
 
     #startImgCount = 5 + (window.innerWidth / 50);
 
@@ -357,7 +375,7 @@ class ParralaxBackground
             if(currentTop >= 0) 
             { 
                 var size = parseInt(this.#imageVisuals[i].style.width) || 0;
-                styleChanges.push({index: i, top: currentTop + (size * 1.25), });  
+                styleChanges.push({index: i, top: currentTop + 5 + ((size * size) / 20), });  
             }
             else
             {
@@ -365,18 +383,18 @@ class ParralaxBackground
             }
             if(currentTop > this.#container.getBoundingClientRect().height)
             {
-                styleChanges.push({index: i, top: 0,});
+                var newWidth = Math.floor(this.#random() * this.#blockRect.width);
+                styleChanges.push({index: i, top: 0, left: newWidth});
             }
         }
         for (const change of styleChanges) {
             this.#imageVisuals[change.index].style.top = change.top + 'px';
+            if(change.left != null) this.#imageVisuals[change.index].style.left = change.left + 'px';
         }
     }
 
     createNewVisual()
     {
-        var blockRect = this.#container.getBoundingClientRect();
-
         var image = document.createElement('img');
     
         var randomImg = Math.floor(this.#random() * this.#imageArray.length); 
@@ -389,8 +407,8 @@ class ParralaxBackground
         image.style.width = imageSize + "px";
         image.style.height = imageSize + "px";
 
-        var widthOffset = Math.floor(this.#random() * blockRect.width - imageSize);
-        var heightOffset = Math.floor(this.#random() * blockRect.height - imageSize);
+        var widthOffset = Math.floor(this.#random() * this.#blockRect.width - imageSize);
+        var heightOffset = Math.floor(this.#random() * this.#blockRect.height - imageSize);
         image.style.left = widthOffset + "px";
         image.style.top = heightOffset + "px";
 

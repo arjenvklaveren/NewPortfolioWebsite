@@ -35,6 +35,9 @@
     .contactLinkDiv {
         width: 80%;
         height: 5.5vh;
+        padding-left: 0;
+        font-size: 0.7rem;
+        justify-content: center;
     }
     #contactLeftDiv {
         height: 60%;
@@ -87,6 +90,9 @@
     .contactLinkDiv {
         width: 60%;
         height: 6.5vh;
+        padding-left: 0;
+        font-size: 0.8rem;
+        justify-content: center;
     }
     #contactLeftDiv {
         height: 60%;
@@ -139,6 +145,9 @@
     .contactLinkDiv {
         width: 75%;
         height: 7.5vh;
+        padding-left: 4.5%;
+        font-size: 0.8rem;
+        justify-content: start;
     }
     #contactLeftDiv {
         height: 100%;
@@ -191,6 +200,9 @@
     .contactLinkDiv {
         width: 75%;
         height: 7.5vh;
+        padding-left: 3.5%;
+        font-size: 1.1rem;
+        justify-content: start;
     }
     #contactLeftDiv {
         height: 100%;

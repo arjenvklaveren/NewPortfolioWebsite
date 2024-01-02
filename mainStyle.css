@@ -244,7 +244,7 @@ body::-webkit-scrollbar {
   width: 18px;
   height: 36px;
   position: absolute;
-  background-image: url(Images/rocket2.png);
+  background-image: url(Images/rocket2flat.png);
   background-size: contain;
   background-repeat: no-repeat;
   transform: translate(-50%, -50%);
@@ -258,7 +258,7 @@ body::-webkit-scrollbar {
 #contentRocket {
   width: 30px;
   height: 60px;
-  background-image: url(Images/rocket2.png), url(Images/rocket2shadow.png);
+  background-image: url(Images/rocket2flat.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

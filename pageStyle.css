@@ -15,9 +15,14 @@
 }
 #homeInfoText1 {
     margin: 0;
+    margin-top: 1%;
+    font-style: italic;
 }
 #homeInfoText2 {
     margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0 0 16px rgb(255, 193, 7);
 }
 #homeExtraInfoText {
     margin: 0;
@@ -83,10 +88,11 @@
     border: solid 4px rgb(13, 110, 253);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
+    padding-left: 3.5%;
 }
 .contactLinkImg {
     height: 75%;
@@ -138,6 +144,9 @@
 #projectsNavDiv {
     height: 10%;
     font-size: 1.75rem;
+}
+.cardPageArrow:hover{
+    cursor: pointer;
 }
 .projectCard {
     width: 50vh;
