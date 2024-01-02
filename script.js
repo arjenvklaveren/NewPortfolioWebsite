@@ -26,6 +26,7 @@ window.onload = function()
     
     setInterval(update, 10);
     scrollToBottom();
+    typeWriterHome();
 };
 window.onresize = function()
 {
@@ -87,6 +88,45 @@ function setContentPageHeight()
     setHeightValues();
 }
 
+function typeWriterHome()
+{
+    var texts = [];
+
+    const allElements = document.getElementsByClassName('typewriter');
+    for(var i = 0; i < allElements.length; i++)
+    {
+        texts[i] = allElements[i].textContent;
+        allElements[i].innerHTML = "";
+        allElements[i].style.borderRight = "solid white 3px";
+        allElements[i].style.animation = "blinkCaret 0.75s infinite";
+    }
+    
+    let paragraphIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+        const element = allElements[paragraphIndex];
+        const currentText = texts[paragraphIndex]; 
+        element.innerHTML = currentText.slice(0, charIndex);
+
+        charIndex++;
+
+        if (charIndex <= currentText.length) {
+            setTimeout(type, 75);
+        } else {
+            allElements[paragraphIndex].style.borderRight = "none";
+            allElements[paragraphIndex].style.animation = "none";
+            paragraphIndex++;
+            charIndex = 0;
+
+            if (paragraphIndex < texts.length) {
+            setTimeout(type, 500);
+            }
+        }
+    }
+    type();
+}
+
 function setNavRocket()
 {
     var navRocket = document.getElementById("navRocket");
@@ -139,6 +179,8 @@ function setContentRocket()
 function goToNavPage(pageID)
 {
     if(canTransition) window.scrollTo(0, pagesHeights[pageID] + 1);
+    if(pageID != 0) document.getElementById("contentRocket").style.animation = "rocketClickAble 4s infinite";
+    else document.getElementById("contentRocket").style.animation = "none";
 }
 
 async function scrollToNextPage()
@@ -189,6 +231,7 @@ async function scrollToNextPage()
 
     await new Promise(resolve => setTimeout(resolve, 1000));
     canTransition = true;
+    contentRocket.style.animation = "rocketClickAble 4s infinite";
 }
 
 function setProjectCards()

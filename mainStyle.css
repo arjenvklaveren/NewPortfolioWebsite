@@ -269,6 +269,7 @@ body::-webkit-scrollbar {
   margin-right: auto;
   z-index: 3;
   filter: drop-shadow(0px 0px 10px white);
+  animation: rocketClickAble 4s infinite;
 }
 #contentRocket:hover {
   cursor: pointer;
@@ -351,14 +352,26 @@ body::-webkit-scrollbar {
     top: 0.5%;
   }
 }
-@keyframes rocketPulseHome {
+
+@keyframes rocketClickAble {
   0% {
-    opacity: 0.6;
+    filter: grayscale(0%) drop-shadow(0px 0px 10px white);
+  }
+  25% {
+    filter: grayscale(100%) drop-shadow(0px 0px 10px black);
   }
   50% {
-    opacity: 0.0;
+    filter: grayscale(0%) drop-shadow(0px 0px 10px white);
+  }
+  75% {
+    filter: grayscale(100%) drop-shadow(0px 0px 10px black);
   }
   100% {
-    opacity: 0.6;
+    filter: grayscale(0%) drop-shadow(0px 0px 10px white);
   }
+}
+
+@keyframes blinkCaret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
 }
