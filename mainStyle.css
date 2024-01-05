@@ -10,6 +10,11 @@
   src: url(Fonts/zekton.otf);
 }
 
+.bi-chevron-compact-down{
+  pointer-events: none;
+  width: 10px;
+}
+
 html {
   scroll-behavior: auto !important;
   padding: 0;

@@ -88,7 +88,6 @@
     border: solid 4px rgb(13, 110, 253);
     display: flex;
     align-items: center;
-    justify-content: start;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
